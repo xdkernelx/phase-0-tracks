@@ -14,3 +14,6 @@
   A good commit message is one that describes in a concise but precise manner just exactly what you did to a file. Did you add a special function to a code? If so, what does it do, is it left unoptimized, what are some special notes of the additions? If you simple re-organized or optimized code, explain how to benefit future code maintainers. 
 
 * What is a merge conflict?
+  A merge conflict as I understand is when a file from two branches, including the master branch, is modified. When a merge is attempted, if there are any lines that "overlap," git will give you a warning.
+
+  Likewise, if you have deleted any files that should be there from the point of branching and editing, you will get a warning. Nothing should occur if you create and then delete a file in a feature branch before merging with the master though. 
