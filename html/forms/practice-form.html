@@ -25,30 +25,33 @@
       <fieldset>
         <div>
           <label>Occupation:</label>
-          <input type="textarea" name="adv-name">
-        </div>
-
-        <div>
-          <label>Type of bicycle:</label>
-          <select name="bike">
-            <option value="road">Road</option>
-            <option value="road">Mountain</option>
-            <option value="road">Cyclocross</option>
-          </select>
+          <input type="textarea" name="job_title">
         </div>
 
         <div>    
-          <label>Choose a date:</label>
-          <input type="date" name="date">
+          <label>Birthdate:</label>
+          <input type="date" name="dob">
         </div>
 
         <div>
-          <input type="checkbox" name="cb-agree" value="agree">
-          I am prepared to lead this adventure.
+          <label>Experience:</label>
+          <select name="expertise">
+            <option value="F"> <3 years</option>
+            <option value="C">3-5 years</option>
+            <option value="B">5-7 years</option>
+            <option value="C">>7 years</option>
+          </select>
         </div>
+
         <div>
           <br />
           <textarea rows="4" cols="50" placeholder="Describe yourself here..." name="comment" form="data_form"></textarea>
+        </div>
+
+        <div>
+          <br />
+          <input type="checkbox" name="terms_agreement" value="agree">
+          I agree with all the terms listed inside the package.
         </div>
       </fieldset>
       
