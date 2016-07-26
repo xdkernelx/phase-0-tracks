@@ -1,0 +1,15 @@
+.octopus-wrapper {
+  margin: 100px 60% 0px 40%;
+}
+
+img#hat {
+  position: relative;
+  right: 20px;
+  bottom: 340px;
+}
+
+img#glasses {
+  position: relative;
+  left: 45px;
+  bottom: 365px;
+}
