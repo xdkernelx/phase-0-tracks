@@ -4,9 +4,26 @@ blockquote {
   margin-left: 0px;
 }
 
+body {
+  width: 960px;
+}
+
 cite {
   display: block;
   margin-top: 10px;
+}
+
+main {
+  display: table-cell;
+  vertical-align: top;
+  width: 756px;
+}
+
+section#external-links {
+  display: table-cell;
+  vertical-align: top;
+  padding-top: 20px;
+  width: 200px;
 }
 
 #external-links ul {
