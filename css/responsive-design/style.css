@@ -48,3 +48,37 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+  @media screen and (max-width: 550px){
+
+    main {
+      display: block;
+      width: 80%;
+      padding-bottom: 180px;
+    }
+
+    section#external-links {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      background-color: #FFFFFF;
+      left: 0px;
+      border-bottom: 1px solid black;
+      padding: 10px;
+    }
+
+  }
+
+  @media screen and (max-width: 450px) {
+
+    body {
+      background-color: lightblue;
+    }
+
+    section#external-links {
+      background-color: lightblue;
+    }
+
+  <!-- improve readability for smaller screens -->
+
+}
