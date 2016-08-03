@@ -1,0 +1,82 @@
+# Instructions for a Anxious Robot (Release 0 for DBC)
+
+-At 12:00:00 PDT--recurring--run search_exit_door() && walk_to_current_target() && enter() to exit out the house
+-Run close_door_behind() method
+-If new_home = true:
+  - run search_object(elevator) to determine the closest object that resembles or is labeled as the inputed parameter. 
+-If new_home = false: #home coordinates will be placed inside memory with a an allowable discrepancy
+  - run load_spatial_cache() to "remember" places that are already visited
+  - run walk_to_target(Elevator)
+
+  =begin
+  There can be any number of buttons, this tells it is is pressing a button to call an elevator object down. It does NOT have the height, location hard coded. It searches for it since it's already situated in front on an elevator for buttons that resemble those of an elevator. 
+  =end
+
+-Run press_button(call_elevator_down)
+-Run--recurring--until elevator_door_open() == true
+-Run forward(4, ft) #This method contain numerical value and an optional metric specifier.
+  (default = miles)
+-Run about_face() #Turns the robot 180 degrees
+-Run search_elevator_buttons() #Searches the buttons associated with floor calls
+-If people = true:
+  - Run people_pause(3) #determines if people haven't done any meaningful action within 3 s
+  - While people_pause(3) == true:
+    - Run people_pause(3)
+    - If people_pause(3) == false:
+      - Break out of loop
+
+  =begin
+  The press_button has 1 required parameter and 1 optional. First parameter is an object with many buttons, in which a secondary parameter is required else an exception is raised. 2nd parameter dictates, for 1st parameter object with more than 1 button, what button to press.
+  Here lobby looks for a lobby button. If it doesn't find it, it presses 1, the default on many elevators. 
+  =end
+
+-Run press_button(elevator, lobby)
+-Run search_display(elevator)
+-If search_display(elevator)[0] == true #returns 1st return value (true or false), 2nd returns location 
+  object
+-While standby(search_display[1], "1"): #standby accepts a location object to know where to look
+  - If "1" is "seen" inside the standby() method:
+    - Break out of loop
+-Run forward(4, ft)
+-Run greeting("Hello", owner)
+-Wait for further instructions by owner via verbal commands.
+
+
+
+#Eating food, some filler actions may have been redacted such as proper hand movements
+#, proper facial movements (biting, drinking), wiping hands, etc.
+-Search for food. May require additional helper methods accessed from Yelp! or Google search.
+-After finding a specific venue, walk inside
+-If there is a large line (more than 3 parties):
+  - Turn around and keep searching
+-Walk to back of the line
+-Wait in line
+-Walk up to cashier
+-Tell them what you'd like
+-Give them payment device
+-Wait until confirmation of order
+-If signature is required:
+  -Sign receipt
+  -Hand over receipt back to cashier
+-If order number receipt or table number is given:
+  -Accept item
+-Walk out the register area
+-Search for available seating
+-If no seating is found:
+  -Ask for your food to be made "to-go"
+  -Find a nearby park with Google search
+  -Eat in grass area or bench(if one is found)
+  -Wrap things up neatly
+  -Throw away in garbage
+  -Leave place
+
+-Else:
+  -Take seat
+  -Wait until order is called/rung up
+  -Go back to counter
+  -Take food
+  -Find seat again
+  -Eat food
+  -Wipe hands
+  -Clean table if not fine dining
+  -Leave place
