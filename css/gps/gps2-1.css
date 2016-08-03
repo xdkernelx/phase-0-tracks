@@ -1,5 +1,6 @@
 body {
-  background-image: url("https://octodex.github.com/images/gangnamtocat.png");
+  background-image: url("./img/gangnamtocat.png");
+  background-position: center;
   background-repeat: no-repeat;
 }
 
