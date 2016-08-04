@@ -64,32 +64,34 @@ print("How many employees will you be processing this time? ")
 
 gets.chomp.to_i.times do 
 
-  print("Name of Employee? ")
-  name = gets.chomp
+  print("x" * 20)
 
-  print("What is your age? What is your year of birth? ")
-  age, year_ob = gets.chomp.split(" ")
-  age = age.to_i
-  year_ob = year_ob.to_i
+  # print("Name of Employee? ")
+  # name = gets.chomp
 
-  age_valid = verify_age(age, year_ob)
+  # print("What is your age? What is your year of birth? ")
+  # age, year_ob = gets.chomp.split(" ")
+  # age = age.to_i
+  # year_ob = year_ob.to_i
 
-  print("Age validity: #{age_valid}\n")
+  # age_valid = verify_age(age, year_ob)
 
-  print("Would you like garlic bread at our next event? (Yes/No) ")
-  if gets.chomp.downcase[0] == "y"
-    likes_garlic = true
-  else
-    likes_garlic = false
-  end
+  # print("Age validity: #{age_valid}\n")
 
-  print("Would you like to enroll in our group health insurance plant? ")
-  if gets.chomp.downcase[0] == "y"
-    insurance = true
-  else
-    insurance = false
-  end
+  # print("Would you like garlic bread at our next event? (Yes/No) ")
+  # if gets.chomp.downcase[0] == "y"
+  #   likes_garlic = true
+  # else
+  #   likes_garlic = false
+  # end
 
-  vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
+  # print("Would you like to enroll in our group health insurance plant? ")
+  # if gets.chomp.downcase[0] == "y"
+  #   insurance = true
+  # else
+  #   insurance = false
+  # end
+
+  # vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
 
 end
