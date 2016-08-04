@@ -48,7 +48,7 @@ else
   likes_garlic = false
 end
 
-print("Likes garlic: #{likes_garlic}")
+print("Likes garlic: #{likes_garlic}\n")
 
 print("Would you like to enroll in our group health insurance plant? \n")
 if gets.chomp.downcase[0] = "y"
@@ -56,3 +56,5 @@ if gets.chomp.downcase[0] = "y"
 else
   insurance = false
 end
+
+print("Needs insurance: #{insurance}")
