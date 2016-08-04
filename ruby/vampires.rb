@@ -60,33 +60,33 @@ def process_employees(num, additional = false)
     end
 
 
-    # print("Name of Employee? ")
-    # name = gets.chomp
+    print("Name of Employee? ")
+    name = gets.chomp
 
-    # print("What is your age? What is your year of birth? ")
-    # age, year_ob = gets.chomp.split(" ")
-    # age = age.to_i
-    # year_ob = year_ob.to_i
+    print("What is your age? What is your year of birth? ")
+    age, year_ob = gets.chomp.split(" ")
+    age = age.to_i
+    year_ob = year_ob.to_i
 
-    # age_valid = verify_age(age, year_ob)
+    age_valid = verify_age(age, year_ob)
 
-    # print("Age validity: #{age_valid}\n")
+    print("Age validity: #{age_valid}\n")
 
-    # print("Would you like garlic bread at our next event? (Yes/No) ")
-    # if gets.chomp.downcase[0] == "y"
-    #   likes_garlic = true
-    # else
-    #   likes_garlic = false
-    # end
+    print("Would you like garlic bread at our next event? (Yes/No) ")
+    if gets.chomp.downcase[0] == "y"
+      likes_garlic = true
+    else
+      likes_garlic = false
+    end
 
-    # print("Would you like to enroll in our group health insurance plant? ")
-    # if gets.chomp.downcase[0] == "y"
-    #   insurance = true
-    # else
-    #   insurance = false
-    # end
+    print("Would you like to enroll in our group health insurance plant? ")
+    if gets.chomp.downcase[0] == "y"
+      insurance = true
+    else
+      insurance = false
+    end
 
-    # vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
+    vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
 
   end
 end
