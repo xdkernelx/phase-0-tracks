@@ -17,12 +17,47 @@ def verify_age(age, year_ob)
   return true
 end
 
+def verify_vampire(name, age_valid, likes_garlic, insurance)
+
+  vampire_status = ""
+
+  if (name.downcase == "drake cula") || (name.downcase == "tu fang")
+    vampire_status = "definitive"
+  elsif age_valid && likes_garlic && insurance
+    vampire_status = "improbable"
+  elsif !age_valid && !likes_garlic && !insurance
+    vampire_status = "near-certain"
+  elsif !age_valid && ( !likes_garlic || !insurance )
+    vampire_status = "probable"
+  end
+
+  case vampire_status
+    when "improbable"
+      print("Probably not a vampire.")
+      return 3
+    when "probable"
+      print("Probably a vampire.")
+      return 5
+    when "near-certain"
+      print("Almost certainly a vampire.")
+      return 7
+    when "definitive"
+      print("Definitely a vampire.")
+      return 10
+    else
+      print("Results inconclusive.")
+      return 5
+  end
+
+end
+
 name = ""
 age = nil
 year_ob = nil
 age_valid = nil
 likes_garlic = nil
 insurance = false
+vampire_status = nil #vampire detection is a spectrum, 1-10
 
 
 print("What is your name? ")
@@ -42,7 +77,7 @@ age_valid = verify_age(age, year_ob)
 print("Age validity: #{age_valid}\n")
 
 print("Would you like garlic bread at our next event? (Yes/No)")
-if gets.chomp.downcase[0] = "y"
+if gets.chomp.downcase[0] == "y"
   likes_garlic = true
 else
   likes_garlic = false
@@ -51,10 +86,12 @@ end
 print("Likes garlic: #{likes_garlic}\n")
 
 print("Would you like to enroll in our group health insurance plant? \n")
-if gets.chomp.downcase[0] = "y"
+if gets.chomp.downcase[0] == "y"
   insurance = true
 else
   insurance = false
 end
 
-print("Needs insurance: #{insurance}")
+print("Needs insurance: #{insurance}\n")
+
+vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
