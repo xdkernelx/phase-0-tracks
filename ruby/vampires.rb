@@ -51,6 +51,46 @@ def verify_vampire(name, age_valid, likes_garlic, insurance)
 
 end
 
+def process_employees(num, additional = false)
+  num.times do |i|
+    if additional
+      print("\n", "x" * 35, "\nProcessing additional employee(s) #{i}...\n", "x" * 35, "\n" * 2)
+    else
+      print("\n", "x" * 24, "\nProcessing employee #{i}...\n", "x" * 24, "\n" * 2)
+    end
+
+
+    # print("Name of Employee? ")
+    # name = gets.chomp
+
+    # print("What is your age? What is your year of birth? ")
+    # age, year_ob = gets.chomp.split(" ")
+    # age = age.to_i
+    # year_ob = year_ob.to_i
+
+    # age_valid = verify_age(age, year_ob)
+
+    # print("Age validity: #{age_valid}\n")
+
+    # print("Would you like garlic bread at our next event? (Yes/No) ")
+    # if gets.chomp.downcase[0] == "y"
+    #   likes_garlic = true
+    # else
+    #   likes_garlic = false
+    # end
+
+    # print("Would you like to enroll in our group health insurance plant? ")
+    # if gets.chomp.downcase[0] == "y"
+    #   insurance = true
+    # else
+    #   insurance = false
+    # end
+
+    # vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
+
+  end
+end
+
 name = ""
 age = nil
 year_ob = nil
@@ -61,37 +101,9 @@ vampire_status = nil #vampire detection is a spectrum, 1-10
 
 
 print("How many employees will you be processing this time? ")
+iter_count = gets.chomp.to_i
+process_employees(iter_count)
 
-gets.chomp.to_i.times do 
-
-  print("x" * 20)
-
-  # print("Name of Employee? ")
-  # name = gets.chomp
-
-  # print("What is your age? What is your year of birth? ")
-  # age, year_ob = gets.chomp.split(" ")
-  # age = age.to_i
-  # year_ob = year_ob.to_i
-
-  # age_valid = verify_age(age, year_ob)
-
-  # print("Age validity: #{age_valid}\n")
-
-  # print("Would you like garlic bread at our next event? (Yes/No) ")
-  # if gets.chomp.downcase[0] == "y"
-  #   likes_garlic = true
-  # else
-  #   likes_garlic = false
-  # end
-
-  # print("Would you like to enroll in our group health insurance plant? ")
-  # if gets.chomp.downcase[0] == "y"
-  #   insurance = true
-  # else
-  #   insurance = false
-  # end
-
-  # vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
-
-end
+print("Would you like to process additional employees? ")
+iter_count = gets.chomp.to_i
+process_employees(iter_count, true)
