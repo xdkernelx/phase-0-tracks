@@ -130,3 +130,5 @@ process_employees(iter_count)
 print("Would you like to process additional employees? ")
 iter_count = gets.chomp.to_i
 process_employees(iter_count, true)
+
+print("Actually, never mind! What do these questions have to do with anything? Let's all be friends")
