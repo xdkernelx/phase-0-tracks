@@ -64,7 +64,7 @@ def process_employees(num, additional = false)
 
   num.times do |i|
     if additional
-      print("\n", "x" * 35, "\nProcessing additional employee(s) #{i + 1}...\n", "x" * 35, "\n" * 2)
+      print("\n", "x" * 38, "\nProcessing additional employee(s) #{i + 1}...\n", "x" * 38, "\n" * 2)
     else
       print("\n", "x" * 24, "\nProcessing employee #{i + 1}...\n", "x" * 24, "\n" * 2)
     end
@@ -125,8 +125,11 @@ print("How many employees will you be processing this time? ")
 iter_count = gets.chomp.to_i
 process_employees(iter_count)
 
-print("Would you like to process additional employees? ")
-iter_count = gets.chomp.to_i
-process_employees(iter_count, true)
+print("Would you like to process additional employees? \n")
+if (gets.chomp.downcase[0] == "y")
+  print("How many employees? ")
+  iter_count = gets.chomp.to_i
+  process_employees(iter_count, true)
+end
 
 print("Actually, never mind! What do these questions have to do with anything? Let's all be friends")
