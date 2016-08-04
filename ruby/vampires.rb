@@ -7,9 +7,20 @@
 
 # end
 
+def verify_age(age, year_ob)
+  #Example, if a person is born on July 2006, and the current date is Jan. 2016
+  #the person is 9 years old, not 10. We need to account for this small error.
+  if (Time.now.year - year_ob) - age > 1
+    return false
+  end
+
+  return true
+end
+
 name = ""
 age = nil
 year_ob = nil
+age_valid = nil
 likes_garlic = nil
 insurance = false
 
@@ -20,6 +31,13 @@ print("Your name is: ", name, "\n")
 
 print("What is your age? What is your year of birth? ")
 age, year_ob = gets.chomp.split(" ")
+age = age.to_i
+year_ob = year_ob.to_i
 
-print("Your age is: ", age)
-print("Your year of birth is: ", year_ob)
+print("Your age is: ", age, "\n")
+print("Your year of birth is: ", year_ob, "\n")
+
+age_valid = verify_age(age, year_ob)
+
+print("Age validity: #{age_valid}")
+
