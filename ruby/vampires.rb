@@ -50,3 +50,9 @@ end
 
 print("Likes garlic: #{likes_garlic}")
 
+print("Would you like to enroll in our group health insurance plant? \n")
+if gets.chomp.downcase[0] = "y"
+  insurance = true
+else
+  insurance = false
+end
