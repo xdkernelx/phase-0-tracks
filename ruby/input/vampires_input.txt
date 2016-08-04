@@ -9,4 +9,11 @@ Drake Cula
 Yes
 No
 No
+Yes
+1
+Sparky
+22 1990
+Yes
+No
+No
 No
