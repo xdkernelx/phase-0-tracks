@@ -131,5 +131,5 @@ if (gets.chomp.downcase[0] == "y")
   iter_count = gets.chomp.to_i
   process_employees(iter_count, true)
 end
-print("Employee processing complete. \n")
+print("Employee verification process complete. \n")
 print("Actually, never mind! What do these questions have to do with anything? Let's all be friends")
