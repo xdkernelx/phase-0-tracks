@@ -33,19 +33,19 @@ def verify_vampire(name, age_valid, likes_garlic, insurance)
 
   case vampire_status
     when "improbable"
-      print("Probably not a vampire.")
+      puts ("Probably not a vampire.")
       return 3
     when "probable"
-      print("Probably a vampire.")
+      puts ("Probably a vampire.")
       return 5
     when "near-certain"
-      print("Almost certainly a vampire.")
+      puts ("Almost certainly a vampire.")
       return 7
     when "definitive"
-      print("Definitely a vampire.")
+      puts ("Definitely a vampire.")
       return 10
     else
-      print("Results inconclusive.")
+      puts ("Results inconclusive.")
       return 5
   end
 
@@ -60,30 +60,36 @@ insurance = false
 vampire_status = nil #vampire detection is a spectrum, 1-10
 
 
-print("What is your name? ")
-name = gets.chomp
+print("How many employees will you be processing this time? ")
 
-print("What is your age? What is your year of birth? ")
-age, year_ob = gets.chomp.split(" ")
-age = age.to_i
-year_ob = year_ob.to_i
+gets.chomp.to_i.times do 
 
-age_valid = verify_age(age, year_ob)
+  print("Name of Employee? ")
+  name = gets.chomp
 
-print("Age validity: #{age_valid}\n")
+  print("What is your age? What is your year of birth? ")
+  age, year_ob = gets.chomp.split(" ")
+  age = age.to_i
+  year_ob = year_ob.to_i
 
-print("Would you like garlic bread at our next event? (Yes/No) ")
-if gets.chomp.downcase[0] == "y"
-  likes_garlic = true
-else
-  likes_garlic = false
+  age_valid = verify_age(age, year_ob)
+
+  print("Age validity: #{age_valid}\n")
+
+  print("Would you like garlic bread at our next event? (Yes/No) ")
+  if gets.chomp.downcase[0] == "y"
+    likes_garlic = true
+  else
+    likes_garlic = false
+  end
+
+  print("Would you like to enroll in our group health insurance plant? ")
+  if gets.chomp.downcase[0] == "y"
+    insurance = true
+  else
+    insurance = false
+  end
+
+  vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
+
 end
-
-print("Would you like to enroll in our group health insurance plant? ")
-if gets.chomp.downcase[0] == "y"
-  insurance = true
-else
-  insurance = false
-end
-
-vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
