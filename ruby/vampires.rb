@@ -113,10 +113,10 @@ def process_employees(num, additional = false)
       if allergies.include?("sunshine")
         vampire_status = 5
         puts ("Probably a vampire.")
+      else
+        vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
       end
     end
-
-    vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
 
   end
 end
