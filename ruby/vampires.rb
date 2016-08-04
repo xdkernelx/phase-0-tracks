@@ -18,3 +18,8 @@ print("What is your name? ")
 name = gets.chomp
 print("Your name is: ", name, "\n")
 
+print("What is your age? What is your year of birth? ")
+age, year_ob = gets.chomp.split(" ")
+
+print("Your age is: ", age)
+print("Your year of birth is: ", year_ob)
