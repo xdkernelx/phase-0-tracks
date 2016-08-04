@@ -62,36 +62,28 @@ vampire_status = nil #vampire detection is a spectrum, 1-10
 
 print("What is your name? ")
 name = gets.chomp
-print("Your name is: #{name}\n")
 
 print("What is your age? What is your year of birth? ")
 age, year_ob = gets.chomp.split(" ")
 age = age.to_i
 year_ob = year_ob.to_i
 
-print("Your age is: #{age}\n")
-print("Your year of birth is: #{year_ob}\n")
-
 age_valid = verify_age(age, year_ob)
 
 print("Age validity: #{age_valid}\n")
 
-print("Would you like garlic bread at our next event? (Yes/No)")
+print("Would you like garlic bread at our next event? (Yes/No) ")
 if gets.chomp.downcase[0] == "y"
   likes_garlic = true
 else
   likes_garlic = false
 end
 
-print("Likes garlic: #{likes_garlic}\n")
-
-print("Would you like to enroll in our group health insurance plant? \n")
+print("Would you like to enroll in our group health insurance plant? ")
 if gets.chomp.downcase[0] == "y"
   insurance = true
 else
   insurance = false
 end
-
-print("Needs insurance: #{insurance}\n")
 
 vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
