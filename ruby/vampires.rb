@@ -41,3 +41,12 @@ age_valid = verify_age(age, year_ob)
 
 print("Age validity: #{age_valid}")
 
+print("Would you like garlic bread at our next event? (Yes/No)")
+if gets.chomp.downcase[0] = "y"
+  likes_garlic = false
+else
+  likes_garlic = true
+end
+
+print("Likes garlic: #{likes_garlic}")
+
