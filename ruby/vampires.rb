@@ -52,6 +52,16 @@ def verify_vampire(name, age_valid, likes_garlic, insurance)
 end
 
 def process_employees(num, additional = false)
+
+  name = ""
+  age = nil
+  year_ob = nil
+  age_valid = nil
+  likes_garlic = nil
+  insurance = false
+  allergies = []
+  vampire_status = nil #vampire detection is a spectrum, 1-10
+
   num.times do |i|
     if additional
       print("\n", "x" * 35, "\nProcessing additional employee(s) #{i}...\n", "x" * 35, "\n" * 2)
@@ -86,19 +96,32 @@ def process_employees(num, additional = false)
       insurance = false
     end
 
+    print("Do you have any allergies by the way? ")
+    reiterate = true
+    i = 0
+    if gets.chomp.downcase[0] == "y"
+      print("\nEnter allergies one by one. Press enter after each\n")
+      print("Type \"done\" when finished.")
+      while reiterate do
+        temp = gets.chomp.downcase
+        if temp == "done"
+          reiterate = false
+        else
+          allergies[i] = temp
+          i += 1
+        end
+      end
+
+      if allergies.include?("sunshine")
+        vampire_status = 5
+        puts ("Probably a vampire.")
+      end
+    end
+
     vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
 
   end
 end
-
-name = ""
-age = nil
-year_ob = nil
-age_valid = nil
-likes_garlic = nil
-insurance = false
-vampire_status = nil #vampire detection is a spectrum, 1-10
-
 
 print("How many employees will you be processing this time? ")
 iter_count = gets.chomp.to_i
