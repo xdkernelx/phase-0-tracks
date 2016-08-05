@@ -7,18 +7,21 @@
   -downcase accepted argument
   -Create a for loop for the number of characters in the string
     -go to first index of string
-    -change it string[idx].next
+    -change it string[idx].next unless it's a space character
     -go to the next one
 =end
 
-def encrypt(string)
-  for i in 0...string.length
-    puts i
+def encrypt(str)
+  for i in 0...str.length
+    if str[i] != " "
+      str[i] = str[i].next
+    end
   end
+  return str
 end
 
-def decrypt(string)
+def decrypt(str)
 
 end
 
-print(encrypt("test"))
+print(encrypt("test tester"))
