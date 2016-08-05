@@ -13,7 +13,9 @@
 
 def encrypt(str)
   for i in 0...str.length
-    if str[i] != " "
+    if str[i] == "z"
+      str[i] = "a"
+    elsif str[i] != " "
       str[i] = str[i].next
     end
   end
@@ -21,7 +23,10 @@ def encrypt(str)
 end
 
 def decrypt(str)
-
+  for i in 0...str.length
+    if str[i] = "a"
+  end
 end
 
-print(encrypt("test tester"))
+print(encrypt("zed"))
+#print(decrypt("uftu")) #uftufs
