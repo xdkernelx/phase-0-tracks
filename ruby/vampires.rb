@@ -99,7 +99,7 @@ def process_employees(num, additional = false)
     i = 0
     if gets.chomp.downcase[0] == "y"
       print("\nEnter allergies one by one. Press enter after each\n")
-      print("Type \"done\" when finished.")
+      print("Type \"done\" when finished.\n")
       while reiterate do
         temp = gets.chomp.downcase
         if temp == "done"
@@ -109,14 +109,14 @@ def process_employees(num, additional = false)
           i += 1
         end
       end
-
-      if allergies.include?("sunshine")
-        vampire_status = 5
-        puts ("Probably a vampire.")
-      end
     end
 
-    vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
+    if allergies.include?("sunshine")
+      vampire_status = 5
+      puts ("Probably a vampire.")
+    else
+      vampire_status = verify_vampire(name, age_valid, likes_garlic, insurance)
+    end
 
   end
 end
@@ -131,5 +131,5 @@ if (gets.chomp.downcase[0] == "y")
   iter_count = gets.chomp.to_i
   process_employees(iter_count, true)
 end
-
+print("Employee verification process complete. \n")
 print("Actually, never mind! What do these questions have to do with anything? Let's all be friends")
