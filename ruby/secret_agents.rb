@@ -24,9 +24,14 @@ end
 
 def decrypt(str)
   for i in 0...str.length
-    if str[i] = "a"
+    if str[i] == "a"
+      str[i] = "z"
+    elsif str[i] != " "
+      str[i] = (str[i].ord - 1).chr
+    end   
   end
+  return str
 end
 
 print(encrypt("zed"))
-#print(decrypt("uftu")) #uftufs
+print(decrypt("uftu uftufs"))
