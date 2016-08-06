@@ -48,14 +48,13 @@ password = ""
 if input.downcase[0] == "d"
   puts("Please enter your password")
   password = gets.chomp
-  print(decrypt(password))
+  print("\nYour decrypted password is: #{decrypt(password)}")
 elsif input.downcase[0] == "e"
   puts("Please enter your password")
   password = gets.chomp
-  print(encrypt(password))
+  print("\nYour encrypted password is: #{encrypt(password)}")
 else
   puts("Invalid input. Retry again.")
-  exit()
 end
 
 =begin
