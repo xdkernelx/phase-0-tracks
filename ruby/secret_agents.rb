@@ -9,6 +9,14 @@
     -go to first index of string
     -change it string[idx].next unless it's a space character
     -go to the next one
+
+  -Decrypt method accept a string argument
+  -Does reverse of what encrypt does using .ord and .chr methods
+
+  -Ask user if they would like to encrypt or decrypt
+  -Ask them for the password
+  -Perform requested operation
+  -Print result
 =end
 
 def encrypt(str)
@@ -33,5 +41,33 @@ def decrypt(str)
   return str
 end
 
-print(encrypt("zed"))
-print(decrypt("uftu uftufs"))
+puts("Hello, agent! How may I help you today? ")
+puts("Would you like to decrypt or encrypt today? ")
+input = gets.chomp
+password = ""
+if input.downcase[0] == "d"
+  puts("Please enter your password")
+  password = gets.chomp
+  print(decrypt(password))
+elsif input.downcase[0] == "e"
+  puts("Please enter your password")
+  password = gets.chomp
+  print(encrypt(password))
+else
+  puts("Invalid input. Retry again.")
+  exit()
+end
+
+=begin
+  puts(encrypt("test tester"))
+  puts(decrypt("uftu uftufs"))
+  puts(encrypt("abc"))
+  puts(encrypt("zed"))
+  puts(decrypt("bcd"))
+  puts(decrypt("afe"))
+
+  This works because we have explicit returns for each method
+  That is also an acceptable input for the other method
+
+  puts(decrypt(encrypt("swordfish")))
+=end
