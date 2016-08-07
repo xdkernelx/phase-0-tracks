@@ -19,7 +19,7 @@ puts "Stop! You’re under arrest!".upcase
 puts "the usual".concat(" suspects")
 #=> "the usual suspects"
 
-# " suspects".<???>
+puts " suspects".rjust(0, "the usual")
 # => "the usual suspects"
 
 # "The case of the disappearing last letter".<???>
