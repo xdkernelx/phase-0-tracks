@@ -36,5 +36,5 @@ puts "z".ord
 # (What is the significance of the number 122 in relation to the character z?)
 # It is a static relationship, can be used for character conditional expressions
 
-# "How many times does the letter 'a' appear in this string?".<???>
+puts "How many times does the letter 'a' appear in this string?".count('a')
 # => 4
