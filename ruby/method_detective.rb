@@ -10,7 +10,7 @@
 puts "zom".sub(/o/, 'oo')
 # => “zoom”
 
-# "enhance".<???>
+puts "enhance".ljust(4).rjust(8)
 # => "    enhance    "
 
 # "Stop! You’re under arrest!".<???>
