@@ -7,7 +7,7 @@
  puts "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+puts "zom".sub(/o/, 'oo')
 # => “zoom”
 
 # "enhance".<???>
