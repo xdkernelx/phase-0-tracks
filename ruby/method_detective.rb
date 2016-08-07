@@ -4,7 +4,7 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
- puts "iNvEsTiGaTiOn".swapcase
+puts "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
 puts "zom".sub(/o/, 'oo')
@@ -28,7 +28,7 @@ puts "The case of the disappearing last letter".chop
 puts "The mystery of the missing first letter".reverse.chop.reverse
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+puts "Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
 # "z".<???>
