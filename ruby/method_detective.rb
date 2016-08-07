@@ -16,7 +16,7 @@ puts "enhance".center(15)
 puts "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+puts "the usual".concat("suspects")
 #=> "the usual suspects"
 
 # " suspects".<???>
