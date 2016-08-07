@@ -10,7 +10,7 @@
 puts "zom".sub(/o/, 'oo')
 # => “zoom”
 
-puts "enhance".center(4)
+puts "enhance".center(15)
 # => "    enhance    "
 
 # "Stop! You’re under arrest!".<???>
