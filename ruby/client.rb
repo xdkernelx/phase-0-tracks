@@ -13,13 +13,13 @@ class Client
 
   def update(first_name: "", last_name: "", age: 0, children: 0,\
                   decor_theme: "", vip_member: false, budget: 0)
-    @first_name = first_name
-    @last_name = last_name
-    @age = age
-    @children = children
-    @decor_theme = decor_theme
-    @vip_member = vip_member
-    @budget = budget
+    change_first_name(first_name)
+    change_last_name(last_name)
+    change_age(age)
+    change_children(children)
+    change_decor(decor_theme)
+    change_vip if @vip != vip_member
+    change_budget(budget)
   end
 
   def change_name(first_name, last_name = "")
@@ -39,7 +39,7 @@ class Client
   end
 
   def change_age(age)
-    @age = age
+    @age = age if age > 0
     return nil
   end
 
