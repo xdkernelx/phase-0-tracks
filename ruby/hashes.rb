@@ -52,9 +52,13 @@ class Client
 
 end
 
-test = Client.new
+cl_attr = [:first_name, :last_name, :age, :children,\
+                    :decor_theme, :vip_member, :budget]
+p cl_attr
+
+test = Client.new()
 
 test.print_client
 
-p test.change_name("Alfonso", "Barbosa")
+p test.change_name("Nestor", "Alvarez")
 test.print_client
