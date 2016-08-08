@@ -35,6 +35,27 @@ puts("Hello, let's get started...")
 puts("Please enter the client's first name: ")
 input = gets.chomp
 test.update(cl_attr[0] => input)
+puts("Please enter the client's last name: ")
+input = gets.chomp
+test.update(cl_attr[1] => input)
+puts("Please enter the client's age: ")
+input = gets.chomp.to_i
+test.update(cl_attr[2] => input)
+puts("Please enter the client's no. of children: ")
+input = gets.chomp.to_i
+test.update(cl_attr[3] => input)
+puts("Please enter the client's decoration theme: ")
+input = gets.chomp
+test.update(cl_attr[4] => input)
+puts("Is the client a VIP member? ")
+if gets.chomp.downcase[0] == 'y'
+  test.update(cl_attr[5] => true)
+else
+  test.update(cl_attr[5] => false)
+end
+puts("What is your client's budget? ")
+input = gets.chomp.to_i
+test.update(cl_attr[6] => input)
 test.print_client
 
 
