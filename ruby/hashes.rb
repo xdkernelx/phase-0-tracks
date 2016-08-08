@@ -51,6 +51,30 @@ class Client
     return nil
   end
 
+  def change_age(age)
+    @age = age
+    return nil
+  end
+
+  def change_children(num)
+    @children = num if num >= 0
+  end
+
+  def change_decor(str)
+    @decor_theme = str if !str.empty?
+    return nil
+  end
+
+  def change_vip()
+    @vip_member = !@vip_member
+    return nil
+  end
+
+  def change_budget(num)
+    @budget = num if num >= 0
+    return nil
+  end
+
   def print_client
     puts("*****VIP Member*****") if @vip_member
     puts("Your client's name is: #{@first_name} #{@last_name if !@last_name.empty?}")
@@ -74,4 +98,14 @@ test.print_client
 p test.change_name("David", "Martel")
 p test.change_first_name("")
 p test.change_last_name("")
+test.print_client
+
+p test.change_last_name("Alvarez")
+p test.change_first_name("Nestor")
+p test.change_budget(1700)
+p test.change_vip()
+p test.change_age(23)
+p test.change_decor("")
+p test.change_children(-1)
+
 test.print_client
