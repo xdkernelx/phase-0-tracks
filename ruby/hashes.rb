@@ -56,7 +56,10 @@ end
 puts("What is your client's budget? ")
 input = gets.chomp.to_i
 test.update(cl_attr[6] => input)
-test.print_client
+hash = test.get_hash
+p hash
+p hash[:last_name]
+#test.print_client
 
 
 
