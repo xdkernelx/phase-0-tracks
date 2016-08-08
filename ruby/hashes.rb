@@ -30,6 +30,7 @@ cl_attr = [:first_name, :last_name, :age, :children,\
 test = Client.new
 
 input = ""
+field = ""
 
 puts("Hello, let's get started...")
 puts("Please enter the client's first name: ")
@@ -58,7 +59,19 @@ input = gets.chomp.to_i
 test.update(cl_attr[6] => input)
 hash = test.get_hash
 p hash
-p hash[:last_name]
+
+puts("Would you like to update any data? ")
+if gets.chomp.downcase[0] == 'y'
+  puts("Please type the name of the field to update: ")
+  field = gets.chomp.to_sym
+  if cl_attr.include?(field)
+    puts("What would you like to update it to? ")
+    input = gets.chomp
+    test.update(field => input)
+  end
+  p test.get_hash
+end
+puts("Have a nice day. :)")
 #test.print_client
 
 
