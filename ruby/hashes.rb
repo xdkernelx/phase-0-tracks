@@ -26,12 +26,18 @@ class Client
 
   def initialize
     @first_name = "Nestor"
-    @last_name = ""
+    @last_name = "Alvarez"
     @age = 22
     @children = 0
     @decor_theme = "baroque"
     @vip_member = true
     @budget = 0
+  end
+
+  def change_name(first_name, last_name = "")
+    @first_name = first_name
+    @last_name = last_name if (last_name != "")
+    return nil
   end
 
   def print_client
@@ -43,13 +49,10 @@ class Client
     puts("Your client's budget is: #{@budget}")
   end
 
-  def change_name(first_name, last_name => "")
-    last_name
-  end
-
 end
 
 test = Client.new
 test.print_client
 
-p test.change_name("Nestor")
+p test.change_name("Alfonso", "Barbosa")
+test.print_client
