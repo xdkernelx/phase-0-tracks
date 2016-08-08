@@ -37,7 +37,17 @@ class Client
 
   def change_name(first_name, last_name = "")
     @first_name = first_name
-    @last_name = last_name if (last_name != "")
+    @last_name = last_name if !last_name.empty?
+    return nil
+  end
+
+  def change_last_name(last_name)
+    @last_name = last_name if !last_name.empty?
+    return nil
+  end
+
+  def change_first_name(first_name)
+    @first_name = first_name if !first_name.empty?
     return nil
   end
 
@@ -62,4 +72,6 @@ test = Client.new(cl_attr[0] => "Nestor" , cl_attr[1] => "Alvarez", cl_attr[2] =
 test.print_client
 
 p test.change_name("David", "Martel")
+p test.change_first_name("")
+p test.change_last_name("")
 test.print_client
