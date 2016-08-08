@@ -26,27 +26,42 @@ require_relative 'client'
 
 cl_attr = [:first_name, :last_name, :age, :children,\
                     :decor_theme, :vip_member, :budget]
-cl_attr
 
-test = Client.new(cl_attr[0] => "Nestor" , cl_attr[1] => "Alvarez", cl_attr[2] => 22, cl_attr[3] => 0,\
-                  cl_attr[4] => "baroque", cl_attr[5] => true, cl_attr[6] => 1500)
+test = Client.new
 
+input = ""
+
+puts("Hello, let's get started...")
+puts("Please enter the client's first name: ")
+input = gets.chomp
+test.update(cl_attr[0] => input)
 test.print_client
 
-test.change_name("David", "Martel")
-test.change_first_name("")
-test.change_last_name("")
-test.print_client
 
-test.change_last_name("Alvarez")
-test.change_first_name("Nestor")
-test.change_budget(1700)
-test.change_vip()
-test.change_age(23)
-test.change_decor("")
-test.change_children(-1)
 
 =begin
+  #Testing readable output method for debugging purposes
+  test.print_client
+  
+  #Testing name mutator methods
+  test.change_name("David", "Martel")
+  test.change_first_name("")
+  test.change_last_name("")
+  test.print_client
+
+  #Testing the rest of mutator methods
+  test.change_last_name("Alvarez")
+  test.change_first_name("Nestor")
+  test.change_budget(1700)
+  test.change_vip()
+  test.change_age(23)
+  test.change_decor("")
+  test.change_children(-1)
+
+  #Decor_theme and children should not be updated
+  test.print_client
+  
+  #Testing accessor methods
   puts test.get_first_name
   puts test.get_last_name
   puts test.get_age
