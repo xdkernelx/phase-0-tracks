@@ -56,9 +56,10 @@ cl_attr = [:first_name, :last_name, :age, :children,\
                     :decor_theme, :vip_member, :budget]
 p cl_attr
 
-test = Client.new()
+test = Client.new(cl_attr[0] => "Nestor" , cl_attr[1] => "Alvarez", cl_attr[2] => 22, cl_attr[3] => 0,\
+                  cl_attr[4] => "baroque", cl_attr[5] => true, cl_attr[6] => 1500)
 
 test.print_client
 
-p test.change_name("Nestor", "Alvarez")
+p test.change_name("David", "Martel")
 test.print_client
