@@ -11,6 +11,17 @@ class Client
     @budget = budget
   end
 
+  def update(first_name: "", last_name: "", age: 0, children: 0,\
+                  decor_theme: "", vip_member: false, budget: 0)
+    @first_name = first_name
+    @last_name = last_name
+    @age = age
+    @children = children
+    @decor_theme = decor_theme
+    @vip_member = vip_member
+    @budget = budget
+  end
+
   def change_name(first_name, last_name = "")
     @first_name = first_name
     @last_name = last_name if !last_name.empty?
