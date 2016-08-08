@@ -65,7 +65,7 @@ class Client
     return nil
   end
 
-  def change_vip()
+  def change_vip
     @vip_member = !@vip_member
     return nil
   end
@@ -75,8 +75,36 @@ class Client
     return nil
   end
 
+  def get_last_name
+    return @last_name
+  end
+  
+  def get_first_name
+    return @first_name
+  end
+
+  def get_age
+    return @age
+  end
+
+  def get_children
+    return @children
+  end
+
+  def get_decor
+    return @decor_theme
+  end
+
+  def vip?
+    return @vip_member
+  end
+
+  def get_budget
+    return @budget
+  end
+
   def print_client
-    puts("*****VIP Member*****") if @vip_member
+    puts("\n*****VIP Member*****") if @vip_member
     puts("Your client's name is: #{@first_name} #{@last_name if !@last_name.empty?}")
     puts("Your client's age is: #{@age}")
     puts("Your client has #{@children} children.")
@@ -88,24 +116,30 @@ end
 
 cl_attr = [:first_name, :last_name, :age, :children,\
                     :decor_theme, :vip_member, :budget]
-p cl_attr
+cl_attr
 
 test = Client.new(cl_attr[0] => "Nestor" , cl_attr[1] => "Alvarez", cl_attr[2] => 22, cl_attr[3] => 0,\
                   cl_attr[4] => "baroque", cl_attr[5] => true, cl_attr[6] => 1500)
 
 test.print_client
 
-p test.change_name("David", "Martel")
-p test.change_first_name("")
-p test.change_last_name("")
+test.change_name("David", "Martel")
+test.change_first_name("")
+test.change_last_name("")
 test.print_client
 
-p test.change_last_name("Alvarez")
-p test.change_first_name("Nestor")
-p test.change_budget(1700)
-p test.change_vip()
-p test.change_age(23)
-p test.change_decor("")
-p test.change_children(-1)
+test.change_last_name("Alvarez")
+test.change_first_name("Nestor")
+test.change_budget(1700)
+test.change_vip()
+test.change_age(23)
+test.change_decor("")
+test.change_children(-1)
 
-test.print_client
+puts test.get_first_name
+puts test.get_last_name
+puts test.get_age
+puts test.get_children
+puts test.get_decor
+puts test.vip?
+puts test.get_budget
