@@ -11,5 +11,17 @@ an_name.each { |var|
 letters.each {|key, val| puts("#{key} is #{val}")}
 p letters
 
-an_name = an_name.map {|var| p var.next}
+temp_arr = []
+temp_arr = an_name.map {|var| p var.next}
+p temp_arr
 p an_name
+
+an_name.map! {|var| p var.next}
+puts("Array after iteration with map! #{an_name}")
+
+new_arr = []
+new_arr = letters.map {|key, val| 
+    val
+}
+
+puts("new_arr contains values: #{new_arr}")
