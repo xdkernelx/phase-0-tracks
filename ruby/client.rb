@@ -23,13 +23,15 @@ class Client
   # +args+:: arguments match parameters, have default values
   # Using self contained methods prevents resetting object values
   def update(first_name: "", last_name: "", age: 0, children: 0,\
-                  decor_theme: "", vip_member: false, budget: 0)
+                  decor_theme: "", vip_member: nil, budget: 0)
     change_first_name(first_name)
     change_last_name(last_name)
     change_age(age)
     change_children(children)
     change_decor(decor_theme)
-    @vip_member = vip_member
+    if(!vip_member.nil?)
+      @vip_member = vip_member
+    end
     change_budget(budget)
   end
 
