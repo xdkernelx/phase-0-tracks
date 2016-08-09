@@ -29,7 +29,7 @@ class Client
     change_age(age)
     change_children(children)
     change_decor(decor_theme)
-    change_vip if @vip != vip_member
+    @vip_member = vip_member
     change_budget(budget)
   end
 
