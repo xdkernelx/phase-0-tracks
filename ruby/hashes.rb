@@ -56,42 +56,85 @@ else
   input = input.split(" ")[0]
   client.update(cl_attr[1] => input)
 end
-# puts("Please enter the client's age: ")
-# input = gets.chomp.to_i
-# client.update(cl_attr[2] => input)
-# puts("Please enter the client's no. of children: ")
-# input = gets.chomp.to_i
-# client.update(cl_attr[3] => input)
-# puts("Please enter the client's decoration theme: ")
-# input = gets.chomp
-# client.update(cl_attr[4] => input)
-# puts("Is the client a VIP member? ")
-# if gets.chomp.downcase[0] == 'y'
-#   client.update(cl_attr[5] => true)
-# else
-#   client.update(cl_attr[5] => false)
-# end
-# puts("What is your client's budget? ")
-# input = gets.chomp.to_i
-# client.update(cl_attr[6] => input)
-# hash = client.get_hash
-# p hash
+puts("Please enter the client's age: ")
+input = gets.chomp
+if input.to_i == 0
+  puts("Incorrect type. Try again.")
+  input = gets.chomp
+  while input.to_i == 0
+    puts("Please enter an integer greater than 0.")
+    input = gets.chomp
+  end
+  input = input.to_i
+  client.update(cl_attr[2] => input)
+end
+puts("Please enter the client's no. of children: ")
+input = gets.chomp
+if input.to_i == 0 && input != "0"
+  puts("Incorrect type. Try again.")
+  input = gets.chomp
+  while input.to_i == 0 && input != "0"
+    puts("Please enter an integer.")
+    input = gets.chomp
+  end
+  input = input.to_i
+  client.update(cl_attr[3] => input)
+end
+puts("Please enter the client's decoration theme: ")
+input = gets.chomp
+if input.empty?
+  puts("Nothing inputted. Try again.")
+  input = gets.chomp
+  while input.empty?
+    puts("Nothing entered. Please try again.")
+    input = gets.chomp
+  end
+  input = input.split(" ")[0]
+  client.update(cl_attr[4] => input)
+else 
+  input = input.split(" ")[0]
+  client.update(cl_attr[4] => input)
+end
+puts("Is the client a VIP member? ")
+if gets.chomp.downcase[0] == 'y'
+  client.update(cl_attr[5] => true)
+else
+  client.update(cl_attr[5] => false)
+end
+puts("What is your client's budget? ")
+input = gets.chomp
+if input.to_i == 0 && input != "0"
+  puts("Incorrect type. Try again.")
+  input = gets.chomp
+  while input.to_i == 0 && input != "0"
+    puts("Please enter an integer.")
+    input = gets.chomp
+  end
+  input = input.to_i
+  client.update(cl_attr[3] => input)
+end
 
-# puts("Would you like to update any data? ")
-# if gets.chomp.downcase[0] == 'y'
-#   puts("Please type the name of the field to update: ")
-#   field = gets.chomp.to_sym
-#   if cl_attr.include?(field)
-#     puts("What would you like to update it to? ")
-#     input = gets.chomp
-#     client.update(field => input)
-#   end
-#   p client.get_hash
-# end
-# puts("Have a nice day. :)")
+puts("Would you like to update any data? ")
+if gets.chomp.downcase[0] == 'y'
+  puts("Please type the name of the field to update: ")
+  field = gets.chomp.to_sym
+  if cl_attr.include?(field)
+    puts("What would you like to update it to? ")
+    input = gets.chomp
+    client.update(field => input)
+    else
+      puts("Wrong field entry. Exiting program.")
+  end
+  p client.get_hash
+end
+puts("Have a nice day. :)")
 client.print_client
 
+def valid_input(str, type = "string")
 
+  
+
+end
 
 =begin
   #Testing readable output method for debugging purposes
