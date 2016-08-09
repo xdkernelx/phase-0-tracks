@@ -12,11 +12,12 @@ letters.each {|key, val| puts("#{key} is #{val}")}
 p letters
 
 temp_arr = []
-temp_arr = an_name.map {|var| p var.next}
-p temp_arr
-p an_name
+puts("temp_arr initialized: #{temp_arr}")
+temp_arr = an_name.map {|var| var.next}
+puts("temp_arr after .map call and assigned: #{temp_arr}")
 
-an_name.map! {|var| p var.next}
+puts("an_name without modification: #{an_name}")
+an_name.map! {|var| var.next}
 puts("Array after iteration with map! #{an_name}")
 
 new_arr = []
