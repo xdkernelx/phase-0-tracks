@@ -26,3 +26,18 @@ new_arr = letters.map {|key, val|
 }
 
 puts("new_arr contains values: #{new_arr}")
+
+puts("Deleting 'b' key with associated value.")
+letters.delete_if {|var|
+    var == "b"
+}
+
+p letters
+
+#Dorz because we modified it earlier
+puts("Deleting 'Dorz' from array")
+an_name.delete_if{|var|
+    var == "Dorz"
+}
+
+p an_name
