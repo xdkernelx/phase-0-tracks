@@ -1,3 +1,7 @@
+#Nestor Alvarez
+#DBC, Bobolinks
+#5.3, 20160808, 17:17 PDT
+
 class Client
 
   # Initializes Client object with keyword arguments
