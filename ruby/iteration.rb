@@ -40,4 +40,16 @@ an_name.delete_if{|var|
     var == "Dorz"
 }
 
-p an_name
+#Delete everything without a value of 200
+letters.keep_if{|key, val|
+    val == 200
+}
+puts("letters after keeping key, value pair with value == 200")
+puts(letters)
+
+#Delete an_name not "Jellz"
+an_name.keep_if{|var|
+    var == "Jellz"
+}
+puts("an_name after keeping 'Jellz' named animals")
+puts(an_name)
