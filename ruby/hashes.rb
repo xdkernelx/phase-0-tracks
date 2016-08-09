@@ -20,90 +20,208 @@
     -Update key
     -Reprint hash
   -Exit Program
+
+  -Assignment complete
+  -Creating new method that will reduce reused code
+  -valid_input validates the type of input
+  -Has 3 options: string, integer-no-zero, integer
 =end
 
 require_relative 'client'
 
+# Validates input based on the optional parameter (default: string)
+# +str+:: raw input from gets.chomp, presumably
+# +type+:: dictates the case to follow
+# returns the appropriate output
+def valid_input(str, type = "string")
+  type.downcase!
+
+  case type
+  when "string"
+    puts("Nothing inputted. Try again.")
+    input = gets.chomp
+    while input.empty?
+      puts("Nothing entered. Please try again.")
+      input = gets.chomp
+    end
+    return input
+  when "integer-no-zero"
+    puts("Incorrect type. Try again.")
+    input = gets.chomp
+    while input.to_i == 0
+      puts("Please enter an integer greater than 0.")
+      input = gets.chomp
+    end
+    input = input.to_i
+  when "integer"
+    puts("Incorrect type. Try again.")
+    input = gets.chomp
+    while input.to_i == 0 && input != "0"
+      puts("Please enter an integer.")
+      input = gets.chomp
+    end
+    input = input.to_i
+  else
+    false
+  end
+
+end
+
 cl_attr = [:first_name, :last_name, :age, :children,\
                     :decor_theme, :vip_member, :budget]
 
-test = Client.new
+client = Client.new
 
 input = ""
 field = ""
 
+#Ask the user for the first name of client
 puts("Hello, let's get started...")
 puts("Please enter the client's first name: ")
 input = gets.chomp
-test.update(cl_attr[0] => input)
+if input.empty?
+  input = valid_input(input)
+else 
+  input = input.split(" ")[0]
+end
+client.update(cl_attr[0] => input)
+
+#Ask the user for the last name of client
 puts("Please enter the client's last name: ")
 input = gets.chomp
-test.update(cl_attr[1] => input)
+if input.empty?
+  puts("Last name not entered. Update if necessary at the end.")
+else 
+  input = input.split(" ")[0]
+  client.update(cl_attr[1] => input)
+end
+
+#Ask the user for the age of client
 puts("Please enter the client's age: ")
-input = gets.chomp.to_i
-test.update(cl_attr[2] => input)
+input = gets.chomp
+if input.to_i == 0
+  input = valid_input(input, "integer-no-zero")
+else
+  input = input.to_i
+end
+client.update(cl_attr[2] => input)
+
+#Ask the user for the no. of children of client
 puts("Please enter the client's no. of children: ")
-input = gets.chomp.to_i
-test.update(cl_attr[3] => input)
+input = gets.chomp
+if input.to_i == 0 && input != "0"
+  input = valid_input(input, "integer")
+  client.update(cl_attr[3] => input)
+else
+  input = input.to_i
+  client.update(cl_attr[3] => input)
+end 
+
+#Ask user for client's decoration theme
 puts("Please enter the client's decoration theme: ")
 input = gets.chomp
-test.update(cl_attr[4] => input)
+if input.empty?
+  input = valid_input(input)
+else
+  input = input.split(" ")[0]
+end
+client.update(cl_attr[4] => input) 
+
+#Ask user whether client is a VIP member
 puts("Is the client a VIP member? ")
 if gets.chomp.downcase[0] == 'y'
-  test.update(cl_attr[5] => true)
+  client.update(cl_attr[5] => true)
 else
-  test.update(cl_attr[5] => false)
+  client.update(cl_attr[5] => false)
 end
-puts("What is your client's budget? ")
-input = gets.chomp.to_i
-test.update(cl_attr[6] => input)
-hash = test.get_hash
-p hash
 
+#Ask user for the budget of client
+puts("What is your client's budget? ")
+input = gets.chomp
+if input.to_i == 0 && input != "0"
+  input = valid_input(input, "integer")
+else
+  input = input.to_i
+end
+client.update(cl_attr[6] => input)
+
+#Ask user if they would like to update any data
 puts("Would you like to update any data? ")
 if gets.chomp.downcase[0] == 'y'
   puts("Please type the name of the field to update: ")
   field = gets.chomp.to_sym
   if cl_attr.include?(field)
-    puts("What would you like to update it to? ")
-    input = gets.chomp
-    test.update(field => input)
+    if [:children, :budget].include?(field)
+      puts("Please enter an integer.")
+      input = gets.chomp
+      if input.to_i == 0 && input != "0"
+        input = valid_input(input, "integer")
+      else
+        input = input.to_i
+      end
+      client.update(field => input)
+    elsif field == :age
+      puts("Please enter a non-zero integer.")
+      input = gets.chomp
+      if input.to_i == 0
+        input = valid_input(input, "integer-no-zero")
+      else
+        input = input.to_i
+      end
+      client.update(field => input)
+    elsif field == :vip_member
+      puts("Client is currently a VIP member.") if client.vip?
+      puts("Client is NOT a VIP member.") if !client.vip?
+      puts("Would you like to change it? ")
+      if gets.chomp.downcase[0] == 'y'
+        client.change_vip
+      end
+    else
+      puts("what would you like to change it to? ")
+      input = gets.chomp
+      if input.empty?
+        input = valid_input(input)
+      else
+        input = input.split(" ")[0]
+      end
+      client.update(field => input)
+    end
+  else
+    puts("Wrong field entry. Exiting program.")
   end
-  p test.get_hash
+  p client.get_hash
 end
+
 puts("Have a nice day. :)")
-#test.print_client
-
-
 
 =begin
   #Testing readable output method for debugging purposes
-  test.print_client
+  client.print_client
   
   #Testing name mutator methods
-  test.change_name("David", "Martel")
-  test.change_first_name("")
-  test.change_last_name("")
-  test.print_client
+  client.change_name("David", "Martel")
+  client.change_first_name("")
+  client.change_last_name("")
+  client.print_client
 
   #Testing the rest of mutator methods
-  test.change_last_name("Alvarez")
-  test.change_first_name("Nestor")
-  test.change_budget(1700)
-  test.change_vip()
-  test.change_age(23)
-  test.change_decor("")
-  test.change_children(-1)
+  client.change_last_name("Alvarez")
+  client.change_first_name("Nestor")
+  client.change_budget(1700)
+  client.change_vip()
+  client.change_age(23)
+  client.change_decor("")
+  client.change_children(-1)
 
   #Decor_theme and children should not be updated
-  test.print_client
+  client.print_client
   
   #Testing accessor methods
-  puts test.get_first_name
-  puts test.get_last_name
-  puts test.get_age
-  puts test.get_children
-  puts test.get_decor
-  puts test.vip?
-  puts test.get_budget
+  puts client.get_first_name
+  puts client.get_last_name
+  puts client.get_age
+  puts client.get_children
+  puts client.get_decor
+  puts client.vip?
+  puts client.get_budget
 =end

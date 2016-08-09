@@ -1,5 +1,12 @@
+#Nestor Alvarez
+#DBC, Bobolinks
+#5.3, 20160808, 17:17 PDT
+
 class Client
 
+  # Initializes Client object with keyword arguments
+  # Params:
+  # +args+:: arguments match parameters, have default values
   def initialize(first_name: "", last_name: "", age: 0, children: 0,\
                   decor_theme: "", vip_member: false, budget: 0)
     @first_name = first_name
@@ -10,18 +17,25 @@ class Client
     @vip_member = vip_member
     @budget = budget
   end
-
+  
+  # Initializes Client object with keyword arguments
+  # Params:
+  # +args+:: arguments match parameters, have default values
+  # Using self contained methods prevents resetting object values
   def update(first_name: "", last_name: "", age: 0, children: 0,\
-                  decor_theme: "", vip_member: false, budget: 0)
+                  decor_theme: "", vip_member: nil, budget: 0)
     change_first_name(first_name)
     change_last_name(last_name)
     change_age(age)
     change_children(children)
     change_decor(decor_theme)
-    change_vip if @vip != vip_member
+    if(!vip_member.nil?)
+      @vip_member = vip_member
+    end
     change_budget(budget)
   end
 
+  #Mutator Methods
   def change_name(first_name, last_name = "")
     @first_name = first_name
     @last_name = last_name if !last_name.empty?
@@ -62,6 +76,7 @@ class Client
     return nil
   end
 
+  #Accessor Methods
   def get_last_name
     return @last_name
   end
@@ -90,12 +105,15 @@ class Client
     return @budget
   end
 
+  # Returns a hash using the object's instance variables (coverted to symbols)
+  # instance_variables returns an Arrays, .each iterates through the array values
   def get_hash
     hash = {}
     instance_variables.each {|var| hash[var.to_s.delete("@").to_sym] = instance_variable_get(var) }
     hash
   end
 
+  # Prints readable output
   def print_client
     puts("\n*****VIP Member*****") if @vip_member
     puts("Your client's name is: #{@first_name} #{@last_name if !@last_name.empty?}")
