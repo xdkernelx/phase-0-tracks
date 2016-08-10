@@ -42,7 +42,7 @@ puts("This person's name is: \
   #{person[:name][:middle_abbr] if person[:name][:middle_abbr] != ""} \
   #{person[:name][:last_name]}\n\n".squeeze(" ")) #Squeeze removes extra spacing for code readability
 puts("Person's attributes: \n#{person[:personal_attr]}\n\n")
-puts("Person's sensitive data: \n#{person[access][:sensitive_info]}\n\n")
+puts("Person's sensitive data: \n#{person[access][:sensitive_info]}\n\n") #only displays if access if allowed
 puts("Person's special talents: ") #\n#{person[access][:special][0..2].to_s}\n\n
 3.times  {|var|
   puts(person[access][:special][var].to_s.rjust(25))
