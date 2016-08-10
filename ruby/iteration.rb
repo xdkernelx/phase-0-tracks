@@ -1,3 +1,7 @@
+#Bahman S., Nestor A.
+#DBC, Bobolinks 2016
+#20160809
+
 an_name = ["Jelly", "Pinky", "Dory"]
 letters = {"a" => 10, "b" => 5, "c" => 200}
 
@@ -53,3 +57,40 @@ an_name.keep_if{|var|
 }
 puts("an_name after keeping 'Jellz' named animals")
 puts(an_name)
+
+puts("Repopulating array and hash to original values")
+an_name = ["Jelly", "Pinky", "Dory"]
+letters = {"a" => 10, "b" => 5, "c" => 200}
+
+puts("Array #{an_name}")
+puts("Hash #{letters}")
+
+#Deleting array if condition is met
+
+an_name.select! {|var| 
+    var == "Jelly"
+}
+
+puts("Array after select! method: #{an_name}")
+
+#Deleting hash pairs if condition is met
+
+letters.select! {|key, val|
+    val < 100
+}
+
+puts("Hash after select! method: #{letters}")
+
+#Deleting array contents
+drop_arr = []
+drop_arr = an_name.drop_while {|val|
+    val == "Jelly"
+}
+
+puts("Array after drop, everything is deleted: #{drop_arr}")
+
+puts("Hash before reject! method: #{letters}")
+letters.reject! { |key, val|
+    val == 10
+}
+puts("Hash after reject! method: #{letters}")
