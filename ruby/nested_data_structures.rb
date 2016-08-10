@@ -16,9 +16,9 @@ person = {
   },
   access_true: {
     sensitive_info: {
-      id: "A2749238",
+      id: "A2749238", #US conventional format
       dob: Date.new(1967, 3, 2, 0),
-      rt_loc: "525 Market St, San Francisco, CA",
+      rt_loc: "525 Market St, San Francisco, CA", #real-time location
       address: "633 Folsom St, San Francisco, CA",
     },
     special: [
@@ -40,7 +40,7 @@ puts("\n", vip_header.center(60), "\n") if priority_ppl.include?(person[:socioec
 puts("This person's name is: \
   #{person[:name][:first_name]} \
   #{person[:name][:middle_abbr] if person[:name][:middle_abbr] != ""} \
-  #{person[:name][:last_name]}\n\n".squeeze(" "))
+  #{person[:name][:last_name]}\n\n".squeeze(" ")) #Squeeze removes extra spacing for code readability
 puts("Person's attributes: \n#{person[:personal_attr]}\n\n")
 puts("Person's sensitive data: \n#{person[access][:sensitive_info]}\n\n")
 puts("Person's special talents: ") #\n#{person[access][:special][0..2].to_s}\n\n
