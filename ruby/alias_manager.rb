@@ -15,8 +15,6 @@ def encrypt(first, last)
     end
   }
 
-  puts("\n")
-
   last = last.chars.map {|var|
     if !vowel?(var)
       if var == var.upcase
@@ -33,7 +31,31 @@ def encrypt(first, last)
 end
 
 def decrypt(first, last)
-  return "untested", "untested"
+  first = first.chars.map {|var|
+    if !vowel?(var)
+      if var == var.upcase
+        prev_consonant(var).upcase
+      else
+        prev_consonant(var)
+      end
+    else
+      prev_vowel(var)
+    end
+  }
+
+  last = last.chars.map {|var|
+    if !vowel?(var)
+      if var == var.upcase
+        prev_consonant(var).upcase
+      else
+        prev_consonant(var)
+      end
+    else
+      prev_vowel(var)
+    end
+  }
+
+  return first.join(""), last.join("")
 end
 
 def switch_names(first, last)
@@ -131,9 +153,9 @@ puts("Is 'b' a vowel? #{vowel?("b")}")
 #   p next_consonant(i.chr)
 # end
 
-for i in 97..122
-  p prev_consonant(i.chr)
-end
+# for i in 97..122
+#   p prev_consonant(i.chr)
+# end
 
 first, last = encrypt(first, last)
 p first
