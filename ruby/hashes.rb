@@ -27,45 +27,10 @@
   -Has 3 options: string, integer-no-zero, integer
 =end
 
+#Both programs were personally made
+#They are on the current directory
 require_relative 'client'
-
-# Validates input based on the optional parameter (default: string)
-# +str+:: raw input from gets.chomp, presumably
-# +type+:: dictates the case to follow
-# returns the appropriate output
-def valid_input(str, type = "string")
-  type.downcase!
-
-  case type
-  when "string"
-    puts("Nothing inputted. Try again.")
-    input = gets.chomp
-    while input.empty?
-      puts("Nothing entered. Please try again.")
-      input = gets.chomp
-    end
-    return input
-  when "integer-no-zero"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i == 0
-      puts("Please enter an integer greater than 0.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  when "integer"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i == 0 && input != "0"
-      puts("Please enter an integer.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  else
-    false
-  end
-
-end
+require_relative 'valid_input'
 
 cl_attr = [:first_name, :last_name, :age, :children,\
                     :decor_theme, :vip_member, :budget]
@@ -189,8 +154,9 @@ if gets.chomp.downcase[0] == 'y'
   else
     puts("Wrong field entry. Exiting program.")
   end
-  p client.get_hash
 end
+
+p client.get_hash
 
 puts("Have a nice day. :)")
 
