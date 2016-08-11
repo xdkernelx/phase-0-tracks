@@ -64,7 +64,11 @@ puts("Is 'b' a vowel? #{vowel?("b")}")
 
 first = first.chars.map {|var|
   if !vowel?(var)
-    p next_consonant(var)
+    if var == var.upcase
+      p next_consonant(var).upcase
+    else
+      p next_consonant(var)
+    end
   else
     p next_vowel(var)
   end
