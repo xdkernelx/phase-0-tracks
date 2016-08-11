@@ -1,6 +1,22 @@
 #Nestor A.
 #DBC, Bobolinks 2016
 #5.6 Solo Challenge, 20160810
+#alias_manager.rb - create aliases for agents
+
+=begin
+  -Use incremental development
+  -Design and test helper methods:
+    -vowel? - returns true if argument is a vowel
+    -next_vowel && next_consonant - returns the next character of the appropriate type
+    -prev_vowel && next_consonant - returns the previous character of the appropriate type
+    -switch_names - simple method that switches variables
+    -encrypt && decrypt - iterate through arguments and modify as needed using principle from 4.6
+
+  -Add a user interface to prompt for values
+  -Validate type using work from 5.3
+  -Once simple data parsing is complete
+    -Store original input and encrypted method as a data structure (hash)
+=end
 
 def encrypt(first, last)
   first = first.chars.map {|var|
@@ -129,6 +145,16 @@ puts("Last name: #{last}")
 
 puts("Is 'b' a vowel? #{vowel?("b")}")
 
+
+first, last = encrypt(first, last)
+p first
+p last
+
+first, last = decrypt(first, last)
+first, last = switch_names(first, last)
+p first
+p last
+
 # vowels_arr.each {|val|
 #   puts(val)
 #   puts(next_vowel(val) + "\n\n")
@@ -156,12 +182,3 @@ puts("Is 'b' a vowel? #{vowel?("b")}")
 # for i in 97..122
 #   p prev_consonant(i.chr)
 # end
-
-first, last = encrypt(first, last)
-p first
-p last
-
-first, last = decrypt(first, last)
-first, last = switch_names(first, last)
-p first
-p last
