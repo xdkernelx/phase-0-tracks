@@ -15,9 +15,17 @@
   -Add a user interface to prompt for values
   -Validate type using work from 5.3
   -Once simple data parsing is complete
-    -Store original input and encrypted method as a data structure (hash)
+    -Store encrypted method return values as a data structure (hash)
+    -Make deep copy of hash into Array indexes
+  -Ask user to reveal client's IDs
+    -Iterate through client "database"
+    -Run decrypt method to reveal IDs
 =end
 
+#Similar to 4.6 task, changes vowels to next vowel
+#Using helper methods (next_consonant)
+#iterates through both parameters individually
+#Returns a pair of values
 def encrypt(first, last)
   first = first.chars.map {|var|
     if !vowel?(var)
@@ -46,6 +54,7 @@ def encrypt(first, last)
   return first.join(""), last.join("")
 end
 
+#Similar to encrypt, but in reverse
 def decrypt(first, last)
   first = first.chars.map {|var|
     if !vowel?(var)
@@ -74,10 +83,12 @@ def decrypt(first, last)
   return first.join(""), last.join("")
 end
 
+#Switches variables, only used to meet requirements
 def switch_names(first, last)
   return last, first
 end
 
+#Uses a dictionary of sorts as index values
 def next_vowel(char)
   vowels_arr = ["a", "e", "i", "o", "u"]
   if char == "u"
@@ -91,6 +102,7 @@ def next_vowel(char)
   end
 end
 
+#Uses a dictionary of sorts as index values
 def prev_vowel(char)
   vowels_arr = ["a", "e", "i", "o", "u"]
   if char == "a"
@@ -104,6 +116,8 @@ def prev_vowel(char)
   end
 end
 
+#If the next char is a vowel, skip to the next one
+#Here, there are no back-to-back vowels, so we are OK
 def next_consonant(char)
   if char == "z"
     return "b"
@@ -116,6 +130,9 @@ def next_consonant(char)
   end
 end
 
+#Uses the relationship between .chr and .ord
+#If the previous char is a vowel, go back back one more
+#The letter 'b' is hard-coded as an edge case
 def prev_consonant(char)
   if char == "a" || char == "b"
     return "z"
@@ -128,11 +145,15 @@ def prev_consonant(char)
   end
 end
 
+#If the parameter.downcase is in dictionary, it's a vowel
 def vowel?(char)
   return true if ["a", "e", "i", "o", "u"].include?(char.downcase)
   false
 end
 
+#Takes 2 arguments, 2nd is optional
+#Returns valid input based on second argument
+#Defaults to string types
 def valid_input(str, type = "string")
   type.downcase!
 
@@ -218,6 +239,7 @@ iter_count.times { |var|
   end
   last_name = input
 
+  #As per challenge requirements.
   first_name, last_name = switch_names(first_name, last_name)
   cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
 
