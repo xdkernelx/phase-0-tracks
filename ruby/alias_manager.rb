@@ -7,7 +7,7 @@ def switch_names(first, last)
 end
 
 def next_vowel(char)
-
+  "hi"
 end
 
 def vowel?(char)
@@ -28,4 +28,5 @@ puts("Is 'a' a vowel? #{vowel?("b")}")
 
 vowels_arr.each {|val|
   puts(val)
+  puts(next_vowel(val))
 }
