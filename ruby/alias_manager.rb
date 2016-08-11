@@ -61,33 +61,36 @@ puts("Is 'b' a vowel? #{vowel?("b")}")
 # for i in 97..122
 #   p next_consonant(i.chr)
 # end
-
-first = first.chars.map {|var|
-  if !vowel?(var)
-    if var == var.upcase
-      p next_consonant(var).upcase
+def encrypt(first, last)
+  first = first.chars.map {|var|
+    if !vowel?(var)
+      if var == var.upcase
+        next_consonant(var).upcase
+      else
+        next_consonant(var)
+      end
     else
-      p next_consonant(var)
+      next_vowel(var)
     end
-  else
-    p next_vowel(var)
-  end
-}
+  }
 
-puts("\n")
+  puts("\n")
 
-last = last.chars.map {|var|
-  if !vowel?(var)
-    if var == var.upcase
-      p next_consonant(var).upcase
+  last = last.chars.map {|var|
+    if !vowel?(var)
+      if var == var.upcase
+        next_consonant(var).upcase
+      else
+        next_consonant(var)
+      end
     else
-      p next_consonant(var)
+      next_vowel(var)
     end
-  else
-    p next_vowel(var)
-  end
-}
+  }
 
-puts("\n\n")
-p first.join("")
-p last.join("")
+  return first.join(""), last.join("")
+end
+
+first, last = encrypt(first, last)
+p first
+p last
