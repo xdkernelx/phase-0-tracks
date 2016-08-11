@@ -221,21 +221,24 @@ iter_count.times { |var|
   first_name, last_name = switch_names(first_name, last_name)
   cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
 
-  # puts("Your client's alias is: #{cl_alias[:first_name]} #{cl_alias[:last_name]}")
-  # first_name, last_name = decrypt(cl_alias[:first_name], cl_alias[:last_name])
-  # first_name, last_name = switch_names(first_name, last_name)
-
-  # puts("#{first_name} #{last_name} is your client's real name.")
-  clients[var] = cl_alias
+  #We cannot do clients[var] = cl_alias because
+  #Ruby makes shallow copies, basically making the same references
+  #If we did a class as above, last client would override ALL clients
+  clients[var] = {
+  first_name: cl_alias[:first_name],
+  last_name: cl_alias[:last_name]
+  }
 }
 
+puts("\n\n\n\n\n")
 
+#Since we know how the decrypt method works, namely the return variables
+#We can skip the call to switch_names
 iter_count.times {|var|
   dump_var1, dump_var2 = decrypt(clients[var][:last_name], clients[var][:first_name])
   puts("Client no. #{var + 1}")
   puts("#{clients[var][:first_name]} #{clients[var][:last_name]} is really #{dump_var1} #{dump_var2}")
 }
-
 
 # first_name, last_name = encrypt(first_name, last_name)
 # p first_name
