@@ -169,6 +169,10 @@ end
 
 first_name = ""
 last_last = ""
+cl_alias = {
+  first_name: "",
+  last_name: ""
+}
 
 first_name, last_name = switch_names(first_name, last_name)
 
@@ -194,15 +198,18 @@ end
 last_name = input
 
 first_name, last_name = switch_names(first_name, last_name)
+cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
 
-first_name, last_name = encrypt(first_name, last_name)
-p first_name
-p last_name
+puts("Your client's alias is: #{cl_alias[:first_name]} #{cl_alias[:last_name]}")
 
-first_name, last_name = decrypt(first_name, last_name)
-first_name, last_name = switch_names(first_name, last_name)
-p first_name
-p last_name
+# first_name, last_name = encrypt(first_name, last_name)
+# p first_name
+# p last_name
+
+# first_name, last_name = decrypt(first_name, last_name)
+# first_name, last_name = switch_names(first_name, last_name)
+# p first_name
+# p last_name
 
 # vowels_arr = ["a", "e", "i", "o", "u"]
 # vowels_upcase = ["A", "E", "I", "O", "U"]
