@@ -78,6 +78,18 @@ def next_consonant(char)
   end
 end
 
+def prev_consonant(char)
+  if char == "a" || char == "b"
+    return "z"
+  elsif char == "A" || char == "B"
+    return "Z"
+  elsif vowel?((char.downcase.ord - 1).chr)
+    return (char.downcase.ord - 2).chr
+  else
+    return (char.downcase.ord - 1).chr
+  end
+end
+
 def vowel?(char)
   return true if ["a", "e", "i", "o", "u"].include?(char.downcase)
   false
@@ -105,19 +117,23 @@ puts("Is 'b' a vowel? #{vowel?("b")}")
 #   puts(next_vowel(val) + "\n\n")
 # }
 
-vowels_arr.each {|val|
-  puts(val)
-  puts(prev_vowel(val) + "\n\n")
-}
+# vowels_arr.each {|val|
+#   puts(val)
+#   puts(prev_vowel(val) + "\n\n")
+# }
 
-vowels_upcase.each {|val|
-  puts(val)
-  puts(next_vowel(val) + "\n\n")
-}
+# vowels_upcase.each {|val|
+#   puts(val)
+#   puts(next_vowel(val) + "\n\n")
+# }
 
 # for i in 97..122
 #   p next_consonant(i.chr)
 # end
+
+for i in 97..122
+  p prev_consonant(i.chr)
+end
 
 first, last = encrypt(first, last)
 p first
