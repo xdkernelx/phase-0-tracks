@@ -176,7 +176,7 @@ def valid_input(str, type = "string")
 end
 
 first_name = ""
-last_last = ""
+last_name = ""
 input = nil
 iter_count = 0
 clients = []
@@ -201,7 +201,7 @@ iter_count.times { |var|
   #Ask the user for the first name of client
   puts("Please enter the client's first name: ")
   input = gets.chomp
-  if input.empty?
+  if input.empty? || input.include?(" ") || input.to_i !=0
     input = valid_input(input)
   else 
     input = input.split(" ")[0]
@@ -211,7 +211,7 @@ iter_count.times { |var|
   #Ask the user for the last name of client
   puts("Please enter the client's last name: ")
   input = gets.chomp
-  if input.empty?
+  if input.empty? || input.include?(" ") || input.to_i !=0
     input = valid_input(input)
   else 
     input = input.split(" ")[0]
