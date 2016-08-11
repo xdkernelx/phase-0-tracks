@@ -230,15 +230,20 @@ iter_count.times { |var|
   }
 }
 
-puts("\n\n\n\n\n")
+puts("\n\n\n")
 
 #Since we know how the decrypt method works, namely the return variables
 #We can skip the call to switch_names
-iter_count.times {|var|
-  dump_var1, dump_var2 = decrypt(clients[var][:last_name], clients[var][:first_name])
-  puts("Client no. #{var + 1}")
-  puts("#{clients[var][:first_name]} #{clients[var][:last_name]} is really #{dump_var1} #{dump_var2}")
-}
+puts("Agen... err clients processed. Would you like to reveal their identities?")
+if gets.chomp.downcase[0] == 'y'
+  iter_count.times {|var|
+    dump_var1, dump_var2 = decrypt(clients[var][:last_name], clients[var][:first_name])
+    puts("Client no. #{var + 1}")
+    puts("#{clients[var][:first_name]} #{clients[var][:last_name]} is really #{dump_var1} #{dump_var2}\n\n")
+  }
+end
+
+puts("Goodbye!")
 
 # first_name, last_name = encrypt(first_name, last_name)
 # p first_name
