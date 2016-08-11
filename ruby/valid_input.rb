@@ -18,6 +18,19 @@ def valid_input(str, type = "string")
       input = gets.chomp
     end
     return input
+  when "string-one-word"
+    puts("Please only one entry.")
+    input = gets.chomp
+    while input.empty? || (input.split(" ").length != 1)
+      if input.empty?
+        puts("Nothing inputted. Try again.")
+        input = gets.chomp
+      else
+        puts("Entered more than one entry. Try again")
+        input = gets.chomp
+      end
+    end
+    return input
   when "integer-no-zero"
     puts("Incorrect type. Try again.")
     input = gets.chomp
