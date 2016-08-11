@@ -22,6 +22,8 @@
     -Run decrypt method to reveal IDs
 =end
 
+require_relative 'valid_input'
+
 #Similar to 4.6 task, changes vowels to next vowel
 #Using helper methods (next_consonant)
 #iterates through both parameters individually
@@ -149,51 +151,6 @@ end
 def vowel?(char)
   return true if ["a", "e", "i", "o", "u"].include?(char.downcase)
   false
-end
-
-#Takes 2 arguments, 2nd is optional
-#Returns valid input based on second argument
-#Defaults to string types
-def valid_input(str, type = "string")
-  type.downcase!
-
-  case type
-  when "string"
-    puts("Nothing inputted. Try again.")
-    input = gets.chomp
-    while input.empty?
-      puts("Nothing entered. Please try again.")
-      input = gets.chomp
-    end
-    return input
-  when "integer-no-zero"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i == 0
-      puts("Please enter an integer greater than 0.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  when "integer-greater-zero"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i <= 0
-      puts("Please enter an integer greater than 0.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  when "integer"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i == 0 && input != "0"
-      puts("Please enter an integer.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  else
-    false
-  end
-
 end
 
 first_name = ""
