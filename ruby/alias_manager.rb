@@ -169,6 +169,7 @@ end
 
 first_name = ""
 last_last = ""
+clients = []
 cl_alias = {
   first_name: "",
   last_name: ""
@@ -201,6 +202,10 @@ first_name, last_name = switch_names(first_name, last_name)
 cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
 
 puts("Your client's alias is: #{cl_alias[:first_name]} #{cl_alias[:last_name]}")
+first_name, last_name = decrypt(cl_alias[:first_name], cl_alias[:last_name])
+first_name, last_name = switch_names(first_name, last_name)
+
+puts("#{first_name} #{last_name} is your client's real name.")
 
 # first_name, last_name = encrypt(first_name, last_name)
 # p first_name
