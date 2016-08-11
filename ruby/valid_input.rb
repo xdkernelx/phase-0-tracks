@@ -19,7 +19,7 @@ def valid_input(str, type = "string")
     end
     return input
   when "string-one-word"
-    puts("Please only one entry.")
+    puts("Invalid entry. Please try again")
     input = gets.chomp
     while input.empty? || input.include?(" ")
       if input.empty?
