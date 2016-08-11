@@ -153,6 +153,14 @@ def valid_input(str, type = "string")
       input = gets.chomp
     end
     input = input.to_i
+  when "integer-greater-zero"
+    puts("Incorrect type. Try again.")
+    input = gets.chomp
+    while input.to_i <= 0
+      puts("Please enter an integer greater than 0.")
+      input = gets.chomp
+    end
+    input = input.to_i
   when "integer"
     puts("Incorrect type. Try again.")
     input = gets.chomp
@@ -169,6 +177,8 @@ end
 
 first_name = ""
 last_last = ""
+input = nil
+iter_count = 0
 clients = []
 cl_alias = {
   first_name: "",
@@ -177,35 +187,48 @@ cl_alias = {
 
 first_name, last_name = switch_names(first_name, last_name)
 
-#Ask the user for the first name of client
+#Ask the user for the no. of clients to process
 puts("Hello, let's get started...")
-puts("Please enter the client's first name: ")
-input = gets.chomp
-if input.empty?
-  input = valid_input(input)
-else 
-  input = input.split(" ")[0]
+puts("How many clients would you like to process? ")
+iter_count = gets.chomp
+if iter_count.to_i <= 0
+  iter_count = valid_input(iter_count, "integer-greater-zero")
+else
+  iter_count = iter_count.to_i
 end
-first_name = input
 
-#Ask the user for the last name of client
-puts("Please enter the client's last name: ")
-input = gets.chomp
-if input.empty?
-  input = valid_input(input)
-else 
-  input = input.split(" ")[0]
-end
-last_name = input
+iter_count.times {
+  p "Hi"
+}
 
-first_name, last_name = switch_names(first_name, last_name)
-cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
+# #Ask the user for the first name of client
+# puts("Please enter the client's first name: ")
+# input = gets.chomp
+# if input.empty?
+#   input = valid_input(input)
+# else 
+#   input = input.split(" ")[0]
+# end
+# first_name = input
 
-puts("Your client's alias is: #{cl_alias[:first_name]} #{cl_alias[:last_name]}")
-first_name, last_name = decrypt(cl_alias[:first_name], cl_alias[:last_name])
-first_name, last_name = switch_names(first_name, last_name)
+# #Ask the user for the last name of client
+# puts("Please enter the client's last name: ")
+# input = gets.chomp
+# if input.empty?
+#   input = valid_input(input)
+# else 
+#   input = input.split(" ")[0]
+# end
+# last_name = input
 
-puts("#{first_name} #{last_name} is your client's real name.")
+# first_name, last_name = switch_names(first_name, last_name)
+# cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
+
+# puts("Your client's alias is: #{cl_alias[:first_name]} #{cl_alias[:last_name]}")
+# first_name, last_name = decrypt(cl_alias[:first_name], cl_alias[:last_name])
+# first_name, last_name = switch_names(first_name, last_name)
+
+# puts("#{first_name} #{last_name} is your client's real name.")
 
 # first_name, last_name = encrypt(first_name, last_name)
 # p first_name
