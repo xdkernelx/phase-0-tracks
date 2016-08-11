@@ -197,38 +197,45 @@ else
   iter_count = iter_count.to_i
 end
 
-iter_count.times {
-  p "Hi"
+iter_count.times { |var|
+  #Ask the user for the first name of client
+  puts("Please enter the client's first name: ")
+  input = gets.chomp
+  if input.empty?
+    input = valid_input(input)
+  else 
+    input = input.split(" ")[0]
+  end
+  first_name = input
+
+  #Ask the user for the last name of client
+  puts("Please enter the client's last name: ")
+  input = gets.chomp
+  if input.empty?
+    input = valid_input(input)
+  else 
+    input = input.split(" ")[0]
+  end
+  last_name = input
+
+  first_name, last_name = switch_names(first_name, last_name)
+  cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
+
+  # puts("Your client's alias is: #{cl_alias[:first_name]} #{cl_alias[:last_name]}")
+  # first_name, last_name = decrypt(cl_alias[:first_name], cl_alias[:last_name])
+  # first_name, last_name = switch_names(first_name, last_name)
+
+  # puts("#{first_name} #{last_name} is your client's real name.")
+  clients[var] = cl_alias
 }
 
-# #Ask the user for the first name of client
-# puts("Please enter the client's first name: ")
-# input = gets.chomp
-# if input.empty?
-#   input = valid_input(input)
-# else 
-#   input = input.split(" ")[0]
-# end
-# first_name = input
 
-# #Ask the user for the last name of client
-# puts("Please enter the client's last name: ")
-# input = gets.chomp
-# if input.empty?
-#   input = valid_input(input)
-# else 
-#   input = input.split(" ")[0]
-# end
-# last_name = input
+iter_count.times {|var|
+  dump_var1, dump_var2 = decrypt(clients[var][:last_name], clients[var][:first_name])
+  puts("Client no. #{var + 1}")
+  puts("#{clients[var][:first_name]} #{clients[var][:last_name]} is really #{dump_var1} #{dump_var2}")
+}
 
-# first_name, last_name = switch_names(first_name, last_name)
-# cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
-
-# puts("Your client's alias is: #{cl_alias[:first_name]} #{cl_alias[:last_name]}")
-# first_name, last_name = decrypt(cl_alias[:first_name], cl_alias[:last_name])
-# first_name, last_name = switch_names(first_name, last_name)
-
-# puts("#{first_name} #{last_name} is your client's real name.")
 
 # first_name, last_name = encrypt(first_name, last_name)
 # p first_name
