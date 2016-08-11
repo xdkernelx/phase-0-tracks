@@ -133,27 +133,79 @@ def vowel?(char)
   false
 end
 
-first = "Nestor"
-last = "Alvarez"
-vowels_arr = ["a", "e", "i", "o", "u"]
-vowels_upcase = ["A", "E", "I", "O", "U"]
+def valid_input(str, type = "string")
+  type.downcase!
 
-first, last = switch_names(first, last)
+  case type
+  when "string"
+    puts("Nothing inputted. Try again.")
+    input = gets.chomp
+    while input.empty?
+      puts("Nothing entered. Please try again.")
+      input = gets.chomp
+    end
+    return input
+  when "integer-no-zero"
+    puts("Incorrect type. Try again.")
+    input = gets.chomp
+    while input.to_i == 0
+      puts("Please enter an integer greater than 0.")
+      input = gets.chomp
+    end
+    input = input.to_i
+  when "integer"
+    puts("Incorrect type. Try again.")
+    input = gets.chomp
+    while input.to_i == 0 && input != "0"
+      puts("Please enter an integer.")
+      input = gets.chomp
+    end
+    input = input.to_i
+  else
+    false
+  end
 
-puts("First name: #{first}")
-puts("Last name: #{last}")
+end
 
-puts("Is 'b' a vowel? #{vowel?("b")}")
+first_name = ""
+last_last = ""
 
+first_name, last_name = switch_names(first_name, last_name)
 
-first, last = encrypt(first, last)
-p first
-p last
+#Ask the user for the first name of client
+puts("Hello, let's get started...")
+puts("Please enter the client's first name: ")
+input = gets.chomp
+if input.empty?
+  input = valid_input(input)
+else 
+  input = input.split(" ")[0]
+end
+first_name = input
 
-first, last = decrypt(first, last)
-first, last = switch_names(first, last)
-p first
-p last
+#Ask the user for the last name of client
+puts("Please enter the client's last name: ")
+input = gets.chomp
+if input.empty?
+  input = valid_input(input)
+else 
+  input = input.split(" ")[0]
+end
+last_name = input
+
+first_name, last_name = switch_names(first_name, last_name)
+
+first_name, last_name = encrypt(first_name, last_name)
+p first_name
+p last_name
+
+first_name, last_name = decrypt(first_name, last_name)
+first_name, last_name = switch_names(first_name, last_name)
+p first_name
+p last_name
+
+# vowels_arr = ["a", "e", "i", "o", "u"]
+# vowels_upcase = ["A", "E", "I", "O", "U"]
 
 # vowels_arr.each {|val|
 #   puts(val)
