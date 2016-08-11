@@ -179,20 +179,20 @@ iter_count.times { |var|
   #Ask the user for the first name of client
   puts("Please enter the client's first name: ")
   input = gets.chomp
-  if input.empty?
-    input = valid_input(input)
+  if input.empty? || input.include?(" ")
+    input = valid_input(input, "string-one-word")
   else 
-    input = input.split(" ")[0]
+    input = input
   end
   first_name = input
 
   #Ask the user for the last name of client
   puts("Please enter the client's last name: ")
   input = gets.chomp
-  if input.empty?
-    input = valid_input(input)
+  if input.empty? || input.include?(" ")
+    input = valid_input(input, "string-one-word")
   else 
-    input = input.split(" ")[0]
+    input = input
   end
   last_name = input
 
