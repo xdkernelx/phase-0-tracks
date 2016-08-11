@@ -110,10 +110,10 @@ vowels_arr.each {|val|
   puts(prev_vowel(val) + "\n\n")
 }
 
-# vowels_upcase.each {|val|
-#   puts(val)
-#   puts(next_vowel(val) + "\n\n")
-# }
+vowels_upcase.each {|val|
+  puts(val)
+  puts(next_vowel(val) + "\n\n")
+}
 
 # for i in 97..122
 #   p next_consonant(i.chr)
