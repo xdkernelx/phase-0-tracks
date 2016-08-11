@@ -2,6 +2,40 @@
 #DBC, Bobolinks 2016
 #5.6 Solo Challenge, 20160810
 
+def encrypt(first, last)
+  first = first.chars.map {|var|
+    if !vowel?(var)
+      if var == var.upcase
+        next_consonant(var).upcase
+      else
+        next_consonant(var)
+      end
+    else
+      next_vowel(var)
+    end
+  }
+
+  puts("\n")
+
+  last = last.chars.map {|var|
+    if !vowel?(var)
+      if var == var.upcase
+        next_consonant(var).upcase
+      else
+        next_consonant(var)
+      end
+    else
+      next_vowel(var)
+    end
+  }
+
+  return first.join(""), last.join("")
+end
+
+def decrypt(first, last)
+  return "untested", "untested"
+end
+
 def switch_names(first, last)
   return last, first
 end
@@ -16,6 +50,19 @@ def next_vowel(char)
     return vowels_arr[vowels_arr.index(char.downcase) + 1]
   else
     return vowels_arr[vowels_arr.index(char.downcase) + 1].upcase
+  end
+end
+
+def prev_vowel(char)
+  vowels_arr = ["a", "e", "i", "o", "u"]
+  if char == "a"
+    return "u"
+  elsif char == "A"
+    return "U"
+  elsif char == char.downcase
+    return vowels_arr[vowels_arr.index(char.downcase) - 1]
+  else
+    return vowels_arr[vowels_arr.index(char.downcase) - 1].upcase
   end
 end
 
@@ -58,39 +105,25 @@ puts("Is 'b' a vowel? #{vowel?("b")}")
 #   puts(next_vowel(val) + "\n\n")
 # }
 
+vowels_arr.each {|val|
+  puts(val)
+  puts(prev_vowel(val) + "\n\n")
+}
+
+# vowels_upcase.each {|val|
+#   puts(val)
+#   puts(next_vowel(val) + "\n\n")
+# }
+
 # for i in 97..122
 #   p next_consonant(i.chr)
 # end
-def encrypt(first, last)
-  first = first.chars.map {|var|
-    if !vowel?(var)
-      if var == var.upcase
-        next_consonant(var).upcase
-      else
-        next_consonant(var)
-      end
-    else
-      next_vowel(var)
-    end
-  }
-
-  puts("\n")
-
-  last = last.chars.map {|var|
-    if !vowel?(var)
-      if var == var.upcase
-        next_consonant(var).upcase
-      else
-        next_consonant(var)
-      end
-    else
-      next_vowel(var)
-    end
-  }
-
-  return first.join(""), last.join("")
-end
 
 first, last = encrypt(first, last)
+p first
+p last
+
+first, last = decrypt(first, last)
+first, last = switch_names(first, last)
 p first
 p last
