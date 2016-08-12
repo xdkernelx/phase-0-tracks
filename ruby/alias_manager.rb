@@ -15,9 +15,19 @@
   -Add a user interface to prompt for values
   -Validate type using work from 5.3
   -Once simple data parsing is complete
-    -Store original input and encrypted method as a data structure (hash)
+    -Store encrypted method return values as a data structure (hash)
+    -Make deep copy of hash into Array indexes
+  -Ask user to reveal client's IDs
+    -Iterate through client "database"
+    -Run decrypt method to reveal IDs
 =end
 
+require_relative 'valid_input'
+
+#Similar to 4.6 task, changes vowels to next vowel
+#Using helper methods (next_consonant)
+#iterates through both parameters individually
+#Returns a pair of values
 def encrypt(first, last)
   first = first.chars.map {|var|
     if !vowel?(var)
@@ -46,6 +56,7 @@ def encrypt(first, last)
   return first.join(""), last.join("")
 end
 
+#Similar to encrypt, but in reverse
 def decrypt(first, last)
   first = first.chars.map {|var|
     if !vowel?(var)
@@ -74,10 +85,12 @@ def decrypt(first, last)
   return first.join(""), last.join("")
 end
 
+#Switches variables, only used to meet requirements
 def switch_names(first, last)
   return last, first
 end
 
+#Uses a dictionary of sorts as index values
 def next_vowel(char)
   vowels_arr = ["a", "e", "i", "o", "u"]
   if char == "u"
@@ -91,6 +104,7 @@ def next_vowel(char)
   end
 end
 
+#Uses a dictionary of sorts as index values
 def prev_vowel(char)
   vowels_arr = ["a", "e", "i", "o", "u"]
   if char == "a"
@@ -104,6 +118,8 @@ def prev_vowel(char)
   end
 end
 
+#If the next char is a vowel, skip to the next one
+#Here, there are no back-to-back vowels, so we are OK
 def next_consonant(char)
   if char == "z"
     return "b"
@@ -116,6 +132,9 @@ def next_consonant(char)
   end
 end
 
+#Uses the relationship between .chr and .ord
+#If the previous char is a vowel, go back back one more
+#The letter 'b' is hard-coded as an edge case
 def prev_consonant(char)
   if char == "a" || char == "b"
     return "z"
@@ -128,51 +147,10 @@ def prev_consonant(char)
   end
 end
 
+#If the parameter.downcase is in dictionary, it's a vowel
 def vowel?(char)
   return true if ["a", "e", "i", "o", "u"].include?(char.downcase)
   false
-end
-
-def valid_input(str, type = "string")
-  type.downcase!
-
-  case type
-  when "string"
-    puts("Nothing inputted. Try again.")
-    input = gets.chomp
-    while input.empty?
-      puts("Nothing entered. Please try again.")
-      input = gets.chomp
-    end
-    return input
-  when "integer-no-zero"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i == 0
-      puts("Please enter an integer greater than 0.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  when "integer-greater-zero"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i <= 0
-      puts("Please enter an integer greater than 0.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  when "integer"
-    puts("Incorrect type. Try again.")
-    input = gets.chomp
-    while input.to_i == 0 && input != "0"
-      puts("Please enter an integer.")
-      input = gets.chomp
-    end
-    input = input.to_i
-  else
-    false
-  end
-
 end
 
 first_name = ""
@@ -201,23 +179,24 @@ iter_count.times { |var|
   #Ask the user for the first name of client
   puts("Please enter the client's first name: ")
   input = gets.chomp
-  if input.empty? || input.include?(" ") || input.to_i !=0
-    input = valid_input(input)
+  if input.empty? || input.include?(" ")
+    input = valid_input(input, "string-one-word")
   else 
-    input = input.split(" ")[0]
+    input = input
   end
   first_name = input
 
   #Ask the user for the last name of client
   puts("Please enter the client's last name: ")
   input = gets.chomp
-  if input.empty? || input.include?(" ") || input.to_i !=0
-    input = valid_input(input)
+  if input.empty? || input.include?(" ")
+    input = valid_input(input, "string-one-word")
   else 
-    input = input.split(" ")[0]
+    input = input
   end
   last_name = input
 
+  #As per challenge requirements.
   first_name, last_name = switch_names(first_name, last_name)
   cl_alias[:first_name], cl_alias[:last_name] = encrypt(first_name, last_name)
 
