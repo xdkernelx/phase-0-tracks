@@ -31,6 +31,7 @@ class Puppy
     @an_attr = an_attr  
   end
 
+  #Accessor Methods
   def get_breed
     @breed
   end
@@ -62,6 +63,10 @@ class Puppy
       :id_marks => @an_attr[:id_marks],
       :rfid => @an_attr[:rfid]
     }
+  end
+
+  def change_breed(var)
+    @breed = var if !var.include?(" ")
   end
 
 end
