@@ -21,7 +21,7 @@ def valid_input(str, type = "string")
   when "string-one-word"
     puts("Invalid entry. Please try again")
     input = gets.chomp
-    while input.empty? || input.include?(" ")
+    while input.empty? || input.include?(" ") || ((Integer(input) rescue "invalid") == input.to_i)
       if input.empty?
         puts("Nothing inputted. Try again.")
         input = gets.chomp
