@@ -1,3 +1,10 @@
+#Nestor Alvarez
+#DBC, Bobolinks 2016
+#5.2 Pairing Session, 20160813
+
+require_relative 'puppy'
+require_relative 'client'
+
 class Puppy
 
   def fetch(toy)
@@ -18,4 +25,10 @@ a = Puppy.new(:breed => "Husky", \
                 }
               )
 
-p a
+#Print out all the available instance variables
+ a.instance_variables.each {|var|
+  p a.instance_variable_get(var)
+}
+
+#Testing method in overriden class
+p a.fetch("chewie")
