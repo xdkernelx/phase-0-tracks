@@ -23,7 +23,7 @@ class Puppy
 =end
 
   def initialize(breed: "", name: "", owner: {last: "", first: "", id: 0}, \
-                vaccinations: {}, an_attr: {fur_color: "vantablack", eye_color: "vantablack", id_marks: [], rfid: ""})
+                vaccinations: {}, an_attr: {fur_color: "vantablack", eye_color: "vantablack", id_marks: [], rfid: 0})
     @breed = breed
     @name = name
     @owner = owner
@@ -84,9 +84,15 @@ class Puppy
     #Validation for individual elements needed
   end
 
-  # def change_vaccinations(hash)
-  #   hash.each {|key, val|
-  #     if @vaccinations
-  #   }
-  # end
+  def change_vaccinations(hash)
+    hash.each {|key, val|
+      @vaccinations[key] = hash[key] if hash[key] != ""
+    }
+  end
+
+  def change_attr(hash)
+    hash.each {|key, val|
+      @an_attr[key] = hash[key] if hash[key] != ""
+    }
+  end
 end
