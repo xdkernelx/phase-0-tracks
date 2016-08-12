@@ -92,7 +92,15 @@ class Puppy
 
   def change_attr(hash)
     hash.each {|key, val|
-      @an_attr[key] = hash[key] if hash[key] != ""
+      if hash[key].instance_of?(Array)
+        @an_attr[key] = hash[key]
+      elsif ((Integer(hash[key]) rescue false) == val.to_i)
+        @an_attr[key] = hash[key] if hash[key] > 0
+      # elsif
+      #   @an_attr[key] = hash[key] if hash[key].instance_of?(Array)
+      else
+        @an_attr[key] = hash[key] if hash[key] != ""
+      end
     }
   end
 end
