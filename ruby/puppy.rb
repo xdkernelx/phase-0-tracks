@@ -10,6 +10,9 @@ class Puppy
     -personal attributes {} (i.e. fur_color, eye_color, id_marks[], rfid, etc
 
     -accessor methods
+      -develop incrementally
+      -especially complicated returns (i.e. hash returns)4
+
     -mutator methods
     -readable output method
     -hash for database entries
@@ -49,6 +52,15 @@ class Puppy
     hash = Hash.new
     @vaccinations.each {|key, val|
       hash[key] = val
+    }
+  end
+
+  def get_attr
+    {
+      :fur_color => @an_attr[:fur_color],
+      :eye_color => @an_attr[:eye_color],
+      :id_marks => @an_attr[:id_marks],
+      :rfid => @an_attr[:rfid]
     }
   end
 
