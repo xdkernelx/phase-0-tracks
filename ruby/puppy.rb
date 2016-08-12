@@ -69,4 +69,24 @@ class Puppy
     @breed = var if !var.include?(" ")
   end
 
+  def change_name(var)
+    @name = var if !var.include?(" ")
+  end
+
+  def change_owner(hash)
+    if !hash.has_value?("")
+      @owner = {
+        :last => hash[:last],
+        :first => hash[:first],
+        :id => hash[:id]
+      }
+    end
+    #Validation for individual elements needed
+  end
+
+  # def change_vaccinations(hash)
+  #   hash.each {|key, val|
+  #     if @vaccinations
+  #   }
+  # end
 end
