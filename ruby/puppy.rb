@@ -13,6 +13,19 @@ class Puppy
     -mutator methods
     -readable output method
     -hash for database entries
+
+    Implementation:
+    -develop an initialize method, (.new reverts to this)
+
 =end
+
+  def initialize(breed: "", name: "", owner: {last: "", first: "", id: 0}, \
+                vaccinations: {}, an_attr: {fur_color: "vantablack", eye_color: "vantablack", id_marks: [], rfid: ""})
+    @breed = breed
+    @name = name
+    @owner = owner
+    @vaccinations = vaccinations
+    @an_attr = an_attr  
+  end
 
 end
