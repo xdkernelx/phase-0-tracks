@@ -36,4 +36,20 @@ class Puppy
     @name
   end
 
+  #returns a deep copy of the contents of @owner
+  def get_owner
+    {
+    :last => @owner[:last],
+    :first => @owner[:first],
+    :id => @owner[:id]
+    }
+  end
+
+  def get_vaccinations
+    hash = Hash.new
+    @vaccinations.each {|key, val|
+      hash[key] = val
+    }
+  end
+
 end
