@@ -28,4 +28,12 @@ class Puppy
     @an_attr = an_attr  
   end
 
+  def get_breed
+    @breed
+  end
+
+  def get_name
+    @name
+  end
+
 end
