@@ -24,6 +24,7 @@ class Puppy
 
   def initialize(breed: "", name: "", owner: {last: "", first: "", id: 0}, \
                 vaccinations: {}, an_attr: {fur_color: "vantablack", eye_color: "vantablack", id_marks: [], rfid: ""})
+    puts("Initializing new puppy instance...")
     @breed = breed
     @name = name
     @owner = owner
