@@ -24,7 +24,8 @@ class Puppy
   end
 
   def dog_years(num)
-    num.to_f / 9
+    HUMAN_TO_DOG_DIVIDER = 9
+    num.to_f / HUMAN_TO_DOG_DIVIDER
   end
 
   def play_dead
