@@ -1,5 +1,7 @@
 class Santa
 
+  attr_accessor :age, :ethnicity, :gender
+
   def initialize(gender: "none", ethnicity: "none")
     puts("Initializing Santa instance ...")
     @gender = gender
