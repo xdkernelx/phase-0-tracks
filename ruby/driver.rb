@@ -3,6 +3,11 @@ require_relative 'santa'
 test = Santa.new
 
 test.speak
+test.eat_milk_and_cookies("Snickerdoodle")
+
+p test.age
+p test.ethnicity
+p test.gender
 
 # a = Puppy.new(:breed => "Husky", \
 #               :name => "Sparky", \
