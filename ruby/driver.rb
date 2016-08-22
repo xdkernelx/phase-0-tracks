@@ -9,6 +9,39 @@ p test.age
 p test.ethnicity
 p test.gender
 
+santas = []
+santas << Santa.new("agender", "black")
+santas << Santa.new("female", "Latino")
+santas << Santa.new("bigender", "white")
+santas << Santa.new("male", "Japanese")
+santas << Santa.new("female", "prefer not to say")
+santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+santas << Santa.new("N/A", "N/A")
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+#Testing accessor methods
+p santas[6].gender
+p santas[6].ethnicity
+p santas[6].age
+p santas[6].celebrate_birthday
+
+santas[6].get_mad_at("Vixen")
+p santas[6].get_ranking
+santas[6].get_mad_at("Vixene")
+
+santas = []
+
+100.times { |i|
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+  santas[i].age = rand(0..140)
+  p santas[i].gender
+  p santas[i].ethnicity
+  p santas[i].age
+}
+
+
 # a = Puppy.new(:breed => "Husky", \
 #               :name => "Sparky", \
 #               :owner => {last: "Alvarez", first: "Nestor", id: 201}, \
