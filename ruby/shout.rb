@@ -1,12 +1,20 @@
 module Shout
-  def self.yell_angrily(words)
+  def yell_angrily(words)
     words + "!!!" + " :("
   end
 
-  def self.yell_happily(words)
+  def yell_happily(words)
     words + "!" + " :)"
   end
 end
 
-p Shout.yell_angrily("I am mad")
-p Shout.yell_happily("I am happy")
+class Mom
+  include Shout
+end
+
+class Dad
+  include Shout
+end
+
+p Mom.new.yell_angrily("I am mad")
+p Dad.new.yell_happily("I am happy")
