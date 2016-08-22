@@ -1,15 +1,24 @@
-require_relative 'puppy'
+require_relative 'santa'
 
-a = Puppy.new(:breed => "Husky", \
-              :name => "Sparky", \
-              :owner => {last: "Alvarez", first: "Nestor", id: 201}, \
-              :vaccinations => {:flu => true, :smallpox => true}, \
-              :an_attr => {
-                  :fur_color => "brown", :eye_color => "blue", \
-                  :id_marks => ["lower-left scar", "left-eye spot"],
-                  :rfid => 2304
-                }
-              )
+test = Santa.new
+
+test.speak
+test.eat_milk_and_cookies("Snickerdoodle")
+
+p test.age
+p test.ethnicity
+p test.gender
+
+# a = Puppy.new(:breed => "Husky", \
+#               :name => "Sparky", \
+#               :owner => {last: "Alvarez", first: "Nestor", id: 201}, \
+#               :vaccinations => {:flu => true, :smallpox => true}, \
+#               :an_attr => {
+#                   :fur_color => "brown", :eye_color => "blue", \
+#                   :id_marks => ["lower-left scar", "left-eye spot"],
+#                   :rfid => 2304
+#                 }
+#               )
 
 
 #Incremental development printing statements
