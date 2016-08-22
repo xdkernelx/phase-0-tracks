@@ -52,10 +52,10 @@ def update_qty(hash, item, new_qty)
  return hash
 end
 
-def print(grocery_list_hash)
- puts "Behold the wonderful grocery list!"
+def print(hash)
+ puts "---------Grocery items------------"
  puts "----------------------------------"
- grocery_list_hash.each { |item, qty|
+ hash.each { |item, qty|
    puts "#{item} : #{qty}"
  }
 end
@@ -65,3 +65,5 @@ p create_list("apples")
 p test = add_item(test, "test", 2)
 p remove_item(test, "tet")
 p test = update_qty(test, "tet", 2)
+
+print(test)
