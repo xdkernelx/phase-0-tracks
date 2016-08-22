@@ -30,4 +30,11 @@ def create_list(items)
  return list_hash
 end
 
-create_list("apples")
+#optional qty value set to 1 if no user input
+def add_item(hash, new_item, qty = 1)
+ hash[new_item] = qty
+ return hash
+end
+
+p create_list("apples")
+p add_item(create_list("apples"), "test", 2)
