@@ -23,11 +23,11 @@
 =end
 
 def create_list(items)
- list_hash = {}
- item_arry = items.split(" ")
- item_arry.each { |item| list_hash[item] = 1 }
- #print_list(list_hash)
- return list_hash
+ hash = {}
+ item_arr = items.split(" ")
+ item_arr.each { |item| hash[item] = 1 }
+ print(hash)
+ return hash
 end
 
 #optional qty value set to 1 if no user input
@@ -36,5 +36,32 @@ def add_item(hash, new_item, qty = 1)
  return hash
 end
 
+#Doesn't modify or return error if it doesn't already exist
+def remove_item(hash, item)
+  hash.delete(item)
+  return hash
+end
+
+#Updates it only if it exists
+def update_qty(hash, item, new_qty)
+ if hash.has_key?(item)
+   hash[item] = new_qty
+ else
+   puts "#{item.capitalize} does not exist"
+ end
+ return hash
+end
+
+def print(grocery_list_hash)
+ puts "Behold the wonderful grocery list!"
+ puts "----------------------------------"
+ grocery_list_hash.each { |item, qty|
+   puts "#{item} : #{qty}"
+ }
+end
+
+test = create_list("apples")
 p create_list("apples")
-p add_item(create_list("apples"), "test", 2)
+p test = add_item(test, "test", 2)
+p remove_item(test, "tet")
+p test = update_qty(test, "tet", 2)
