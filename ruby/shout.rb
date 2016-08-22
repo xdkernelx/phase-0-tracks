@@ -7,3 +7,6 @@ module Shout
     words + "!" + " :)"
   end
 end
+
+p Shout.yell_angrily("I am mad")
+p Shout.yell_happily("I am happy")
