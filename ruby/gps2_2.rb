@@ -25,9 +25,9 @@
 def create_list(items)
  list_hash = {}
  item_arry = items.split(" ")
- item_arry.each { |item| p list_hash[item] = 1 }
- print_list(list_hash)
+ item_arry.each { |item| list_hash[item] = 1 }
+ #print_list(list_hash)
  return list_hash
 end
 
-create_list({apples: 2})
+create_list("apples")
