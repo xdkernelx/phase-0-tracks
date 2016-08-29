@@ -25,3 +25,5 @@ function contains_pair(obj1, obj2) {
 
 console.log(longest_string(test_arr));
 console.log(longest_string(test_arr2));
+console.log(contains_pair({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
+console.log(contains_pair({name: "Steven", age: 54}, {name: "Tamir", age: 45}))
