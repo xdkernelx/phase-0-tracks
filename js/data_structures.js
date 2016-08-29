@@ -21,3 +21,5 @@ function Car(owner, year_made, cost) {
 
 car1 = new Car("Nestor", 2011, 22000);
 console.log(car1);
+car1 = new Car("Alison", 2001, 2200);
+console.log(car1);
