@@ -23,7 +23,23 @@ function contains_pair(obj1, obj2) {
     return false;
 }
 
+function generate_str(num) {
+    arr = []
+    for(i = 0; i < num; i++) {
+        temp = Math.floor((Math.random() * 10) + 1);
+        str = ""
+        for(j = 0; j < temp; j++) {
+            ascii_access = Math.floor((Math.random() * 26) + 97); 
+            str += String.fromCharCode(ascii_access);
+        }
+        arr.push(str);
+    }
+    return arr;
+}
+
 console.log(longest_string(test_arr));
 console.log(longest_string(test_arr2));
 console.log(contains_pair({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
 console.log(contains_pair({name: "Steven", age: 54}, {name: "Tamir", age: 45}))
+
+console.log(generate_str(3))
