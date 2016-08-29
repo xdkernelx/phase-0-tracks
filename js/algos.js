@@ -42,4 +42,8 @@ console.log(longest_string(test_arr2));
 console.log(contains_pair({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
 console.log(contains_pair({name: "Steven", age: 54}, {name: "Tamir", age: 45}))
 
-console.log(generate_str(3))
+for(p = 0; p < 10; p++) {
+    temp = generate_str(4);
+    console.log(temp);
+    console.log(longest_string(temp));
+}
