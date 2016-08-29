@@ -12,3 +12,12 @@ for(i = 0; i < horses.length; i++) {
 }
 
 console.log(horse_object);
+
+function Car(owner, year_made, cost) {
+    this.owner = owner;
+    this.year_made = year_made;
+    this.cost = cost;
+}
+
+car1 = new Car("Nestor", 2011, 22000);
+console.log(car1);
