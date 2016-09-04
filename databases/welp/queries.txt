@@ -1,0 +1,14 @@
+sqlite> SELECT users.firstname, users.lastname, reviews.comment,businesses.name FROM reviews JOIN users ON reviews.user_id=users.id
+   ...> JOIN businesses ON reviews.business_id=businesses.id;
+Mandy|Kaling|great food!|Grundy Hollow Wedding Chapel
+Angela|Jolie|nice people!|Amir's Towing
+
+--------------------------------------------------------------------------
+
+sqlite> SELECT * FROM reviews JOIN users ON reviews.user_id=users.id
+   ...> JOIN businesses ON reviews.business_id=businesses.id
+   ...> WHERE business_id=1;
+1|5|great food!|1|2|2|Mandy|Kaling|1|Grundy Hollow Wedding Chapel
+
+
+--------------------------------------------------------------------------
