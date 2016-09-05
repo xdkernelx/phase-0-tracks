@@ -22,7 +22,7 @@ create_table_employees = <<-SQL
 SQL
 
 create_table_employers = <<-SQL
-    CREATE TABLE employers (
+    CREATE TABLE IF NOT EXISTS employers (
       id INTEGER PRIMARY KEY, 
       name VARCHAR(255), 
       emp_no INT, 
@@ -31,6 +31,7 @@ create_table_employers = <<-SQL
 SQL
 
 #Execute table creation
+db.execute
 db.execute(create_table_employees)
 db.execute(create_table_employers)
 
