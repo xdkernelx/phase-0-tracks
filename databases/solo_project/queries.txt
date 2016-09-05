@@ -4,10 +4,14 @@ SELECT * FROM employers;
 2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false
 3|IBM|1 New Orchard Road. Armonk, New York 10504|377757|true
 
+---------------------------------------------------------------------------------------------------------
+
 SELECT * FROM employers
 WHERE name = "Google";
 
 1|Google|1600 Amphitheatre Pkwy, Mountain View, CA 94043|61814|true
+
+---------------------------------------------------------------------------------------------------------
 
 SELECT * FROM employers 
 JOIN employees ON employees.emp_id = employers.id;
@@ -16,3 +20,13 @@ JOIN employees ON employees.emp_id = employers.id;
 2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false|2|Mary Sue|2|Cashier
 2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false|3|Joe Schmuck|2|Owner
 3|IBM|1 New Orchard Road. Armonk, New York 10504|377757|true|4|Arlene Desi|3|Researcher
+
+---------------------------------------------------------------------------------------------------------
+
+SELECT employees.name, employees.position, employers.name 
+FROM employers 
+JOIN employees ON employees.emp_id = employers.id 
+WHERE employees.emp_id = 2;
+
+Mary Sue|Cashier|Joe's Pizzeria
+Joe Schmuck|Owner|Joe's Pizzeria
