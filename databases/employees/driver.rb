@@ -1,9 +1,10 @@
-#Nestor Alvarez
+  #Nestor Alvarez
 #Sept. 5, 2016
 #DBC Bobolinks
 
 require 'sqlite3'
 require 'faker'
+require_relative 'employees'
 
 #Create SQLite3 Database
 db = SQLite3::Database.new("employees.db")
