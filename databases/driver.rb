@@ -20,12 +20,15 @@ create_table_employees = <<-SQL
     )
 SQL
 
-create_table_employees = <<-SQL
+create_table_employers = <<-SQL
     CREATE TABLE employers (
       id INTEGER PRIMARY KEY, 
       name VARCHAR(255), 
-      address VARCHAR(255), 
       emp_no INT, 
       aca_compliance BOOLEAN
     )
 SQL
+
+#Execute table creation
+db.execute(create_table_employees)
+db.execute(create_table_employers)
