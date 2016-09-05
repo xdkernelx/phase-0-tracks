@@ -44,3 +44,45 @@ end
 20.times do
   create_employer(db, Faker::Company.name, rand(1..10000000), rand(0..1))
 end
+
+#Playing around with queries
+selection = db.execute("SELECT * FROM employers WHERE emp_no >= 500")
+
+selection.each do |employer| 
+  puts("#{employer['name']} has #{employer['emp_no']} employees.")
+end
+
+puts("---------------------------------------------------------")
+
+selection = db.execute("SELECT * FROM employees WHERE position = 'doctor'")
+
+selection.each do |employee| 
+  puts("#{employee['name']} is a #{employee['position']}.")
+end
+
+puts("---------------------------------------------------------")
+
+selection = db.execute("SELECT * FROM employees WHERE position = 'programmer'")
+
+selection.each do |employee| 
+  puts("#{employee['name']} is a #{employee['position']}.")
+end
+
+puts("---------------------------------------------------------")
+
+selection = db.execute("SELECT * FROM employees WHERE position = 'accountant'")
+
+selection.each do |employee| 
+  puts("#{employee['name']} is a #{employee['position']}.")
+end
+
+puts("---------------------------------------------------------")
+
+#Hash isn't always preferred in the case when both tables have variables for the same name
+db.results_as_hash = false
+
+selection = db.execute("SELECT employees.name, employers.name FROM employees JOIN employers ON emp_id = employers.id WHERE emp_id < 10")
+
+selection.each do |employee| 
+  puts("#{employee[0]} works for #{employee[1]}")
+end
