@@ -30,3 +30,63 @@ WHERE employees.emp_id = 2;
 
 Mary Sue|Cashier|Joe's Pizzeria
 Joe Schmuck|Owner|Joe's Pizzeria
+
+---------------------------------------------------------------------------------------------------------
+
+DELETE FROM employees
+WHERE name = "Mary Sue";
+
+/* No Output */
+
+---------------------------------------------------------------------------------------------------------
+
+SELECT employees.name, employees.position, employers.name 
+FROM employers 
+JOIN employees ON employees.emp_id = employers.id 
+WHERE employees.emp_id = 2;
+
+Joe Schmuck|Owner|Joe's Pizzeria
+
+---------------------------------------------------------------------------------------------------------
+
+INSERT INTO employees (name, emp_id, position) VALUES ("James Bond", 5, "Operative");
+
+/* No Output */
+
+---------------------------------------------------------------------------------------------------------
+
+SELECT * FROM employees 
+LEFT JOIN employers ON emp_id = employers.id;
+
+1|James Smith|1|Data Analyst (jr.)|1|Google|1600 Amphitheatre Pkwy, Mountain View, CA 94043|61814|true
+3|Joe Schmuck|2|Owner|2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false
+4|Arlene Desi|3|Researcher|3|IBM|1 New Orchard Road. Armonk, New York 10504|377757|true
+5|James Bond|5|Operative|||||
+
+---------------------------------------------------------------------------------------------------------
+
+SELECT * FROM employers 
+LEFT JOIN employees ON employers.id = employees.emp_id;
+
+1|Google|1600 Amphitheatre Pkwy, Mountain View, CA 94043|61814|true|1|James Smith|1|Data Analyst (jr.)
+2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false|3|Joe Schmuck|2|Owner
+3|IBM|1 New Orchard Road. Armonk, New York 10504|377757|true|4|Arlene Desi|3|Researcher
+
+---------------------------------------------------------------------------------------------------------
+
+SELECT employees.name, employers.name 
+FROM employees
+CROSS JOIN employers;
+
+James Smith|Google
+James Smith|Joe's Pizzeria
+James Smith|IBM
+Joe Schmuck|Google
+Joe Schmuck|Joe's Pizzeria
+Joe Schmuck|IBM
+Arlene Desi|Google
+Arlene Desi|Joe's Pizzeria
+Arlene Desi|IBM
+James Bond|Google
+James Bond|Joe's Pizzeria
+James Bond|IBM
