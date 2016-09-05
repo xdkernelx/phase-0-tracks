@@ -8,3 +8,11 @@ SELECT * FROM employers
 WHERE name = "Google";
 
 1|Google|1600 Amphitheatre Pkwy, Mountain View, CA 94043|61814|true
+
+SELECT * FROM employers 
+JOIN employees ON employees.emp_id = employers.id;
+
+1|Google|1600 Amphitheatre Pkwy, Mountain View, CA 94043|61814|true|1|James Smith|1|Data Analyst (jr.)
+2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false|2|Mary Sue|2|Cashier
+2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false|3|Joe Schmuck|2|Owner
+3|IBM|1 New Orchard Road. Armonk, New York 10504|377757|true|4|Arlene Desi|3|Researcher
