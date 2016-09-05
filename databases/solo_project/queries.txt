@@ -1,0 +1,3 @@
+1|Google|1600 Amphitheatre Pkwy, Mountain View, CA 94043|61814|true
+2|Joe's Pizzeria|123 Unreal St, Pasadena, CA 91106|25|false
+3|IBM|1 New Orchard Road. Armonk, New York 10504|377757|true
