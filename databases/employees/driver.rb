@@ -37,6 +37,10 @@ db.execute(create_table_employees)
 db.execute(create_table_employers)
 
 #Populate the employees table
-10.times do
+50.times do
   create_employee(db, Faker::Name.name, rand(1..20), Faker::Company.profession)
+end
+
+20.times do
+  create_employee(db, Faker::Company.name, rand(1..10000000), Faker::Boolean.boolean)
 end
