@@ -4,4 +4,4 @@
 
 require 'sqlite3'
 
-def create_employee(db, name)
+def create_employee(db, name, )
