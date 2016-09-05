@@ -31,11 +31,10 @@ create_table_employers = <<-SQL
 SQL
 
 #Execute table creation
-db.execute
 db.execute(create_table_employees)
 db.execute(create_table_employers)
 
 #Populate the employees table
-500.times do
+10.times do
   create_employee(db, Faker::Name.name, rand(1..20), Faker::Company.profession)
 end
