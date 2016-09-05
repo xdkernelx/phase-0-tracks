@@ -12,7 +12,7 @@ db.results_as_hash = true
 
 # learn about fancy string delimiters
 create_table_employees = <<-SQL
-    CREATE TABLE IF NOT EXISTS employees (
+    CREATE TABLE employees (
       id INTEGER PRIMARY KEY, 
       name VARCHAR(255), 
       emp_id INT, 
@@ -22,7 +22,7 @@ create_table_employees = <<-SQL
 SQL
 
 create_table_employers = <<-SQL
-    CREATE TABLE IF NOT EXISTS employers (
+    CREATE TABLE employers (
       id INTEGER PRIMARY KEY, 
       name VARCHAR(255), 
       emp_no INT, 
@@ -31,6 +31,8 @@ create_table_employers = <<-SQL
 SQL
 
 #Execute table creation
+db.execute("DROP TABLE employees")
+db.execute("DROP TABLE employers")
 db.execute(create_table_employees)
 db.execute(create_table_employers)
 
