@@ -17,14 +17,24 @@ nav {
   width: 50%;
 }
 
+.nav-item {
+  margin: auto;
+  text-align: center;
+  list-style: none;
+  width: 50%;
+}
+
+.nav-item > li {
+  text-indent: 100px;
+}
+
 .sub-menu{
   position: absolute;
-  background-color: #74C2E1;
-  margin-left: 0px;
-  padding-left: 10px;
+  background-color: #FFFFFF;
+  margin: auto;
+  width: 50%;
   list-style: none;
-  text-align: left;
-  width:32%;
+  text-align: center;
   display:none;
 }
 
