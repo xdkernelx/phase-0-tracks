@@ -20,3 +20,14 @@ The syntax is pretty clear. paulliu87 uses JQuery from the JQuery website, while
 version of it. They both seem to be the latest versions. Still, comparing both of these users, there is 
 redundancy that is apparent. One uses .on("click", ACTION) while the other uses .click(ACTION)
 
+In testing out both, paulliu87 doesn't seem to have a way to revert back to the original settings after
+each click. It's a one time animation. 
+
+In parkyngj's case, once the button is clicked once and the .after method prints out a a new "kamoji,"
+if there are multiple clicks, there will be a repeating "kamoji" without an end. So perhaps adding
+a condition where .after is only called once may be needed.
+
+After studying their syntax and looking at the documentation for the things both users uses, I feel
+like I am ready to do a very simple practice run. I will not do anything better, but it was definitely a
+a concise manner to learn what is going on through implementation rather than looking at raw docs alone.
+
