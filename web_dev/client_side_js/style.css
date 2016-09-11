@@ -1,0 +1,32 @@
+body {
+    background-color: green;
+}
+
+h1 {
+    font-family: helvetica;
+    text-align: center;
+}
+
+#paragraph {
+    background-color: pink;
+}
+
+img:hover {
+    color: blue;
+    /*width: 50%;*/
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+a {
+    background-color: black;
+}
+
+
+a:hover {
+    background-color: blue;
+    width: 50%;
+    opacity: 0.5;
+    filter: alpha(opacity=50); 
+
+}
