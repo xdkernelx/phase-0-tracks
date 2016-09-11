@@ -17,6 +17,17 @@ nav {
   width: 50%;
 }
 
+.sub-menu{
+  position: absolute;
+  background-color: #74C2E1;
+  margin-left: 0px;
+  padding-left: 10px;
+  list-style: none;
+  text-align: left;
+  width:32%;
+  display:none;
+}
+
 .negative {
   color: red;
 }
