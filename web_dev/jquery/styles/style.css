@@ -1,0 +1,79 @@
+h1.center {text-align: center; font-family: courier;}
+nav {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  font-size: 120%;
+}
+
+.main {
+  margin: auto;
+  text-indent: 50px;
+  font-size: 150%;
+  width: 50%;
+}
+.sub {
+  margin: auto;
+  width: 50%;
+}
+
+.negative {
+  color: red;
+}
+
+.center {text-align: center;}
+
+p {
+  margin: auto;
+  width: 50%;
+  text-indent: 50px;
+}
+
+img {
+  display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+table, th, td {
+  margin: auto;
+  width: 30%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+td.hidden {opacity:0;}
+td.hidden:hover {opacity:1;}
+
+caption#secret-contact {
+  caption-side: bottom;
+}
+
+footer {
+  background-color: black;
+  width: 100%;
+  position: fixed;
+  padding: 50px;
+  bottom: 0px;
+  left: 0px;
+  color: red;
+  font-family: Helvetica;
+  font-size: 140%;
+  font-weight: bold;
+}
+
+  @media screen and (max-width: 720px){
+
+    footer{
+      visibility: hidden;
+    }
+
+  }
+
+  @media screen and (max-width: 450px){
+
+    .responsive {
+        display: none;
+    }
+
+  }

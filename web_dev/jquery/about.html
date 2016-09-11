@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <style>
+      body {background-color: #87CEEB;}
+    </style>
+  </head>
+  <body>
+    <h1 class="center">About Me</h1>
+
+    <nav style="center">
+      <a href="./index.html">Main</a> |
+      <a href="./phase0/index.html">Phase 0</a> |
+      <a href ="./contact.html">Contact</a>
+    </nav>
+
+    <br /><img src="./img/thumb_self.jpg" class="responsive" alt="A picture of me :D" width="300" /><br />
+
+    <p>
+      I am a 22 year old guy from Long Beach, CA. I used to be a computer engineer student at Cal Poly, SLO; unfortunately, I had to put my studies on hiatus for a myriad of reasons. What followed next was a short-lived military career in the U.S. Air Force as an aircraft electrician. The reason was medical, but the commander was nice enough to grant me a full honorable discharge. Although I would have liked to finish my contract, it was also a blessing. I worked at a Japanese-owned, European-inspired bakery literally down the street from the physical location of the San Francisco devBootcamp campus. As of 22 July 2016, I no longer am employed there... or anywhere. I am waiting until devBootcamp starts kicking gears, so I won't lose my mind. I am really excited to get through this and start taking control of my life. 
+    </p>
+
+    <footer>
+      <!-- script provided by Fardjad Davari @ NPM. License included in source -->
+    <div>
+      <span id="typewriter"></span>
+      ||
+    </div>
+
+    <script type="text/javascript" src="./js/typewriter-bundle.js"></script>
+    <script type="text/javascript">
+        quotes = [
+          "Believe in yourself because I believe in you.",
+          "Start where you are. Use what you have. Do what you can.",
+          "If you can dream it, you can do it.",
+          "You got this!",
+          "Aim High. Fly. Fight. Win!"
+        ]
+      var typewriter = require('typewriter');
+      var twSpan = document.getElementById('typewriter');
+      var tw = typewriter(twSpan).withAccuracy(95)
+                                 .withMinimumSpeed(5)
+                                 .withMaximumSpeed(18)
+                                 .build();
+      tw.waitRange(300, 800)
+        .type(quotes[Math.floor(Math.random() * quotes.length)])
+    </script>
+    </footer>
+  </body>
+</html>

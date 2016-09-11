@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The dev Bootcamp Experience</title>
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <style>
+      body {background-color: #87CEEB;}
+    </style>
+  </head>
+  <body>
+    <h1 class="center">The dev Bootcamp Experience</h1>
+    <div>
+    <nav style="center">
+      <a href="./about.html">About Me</a> |
+      <a href="./phase0/index.html">Phase 0</a> |
+      <a href ="./contact.html">Contact</a>
+    </nav>
+    </div>
+    <br />
+    <div>
+      <p class="main">
+      My devBootcamp cohort is the <b>SF Bobolinks of 2016</b>. We started doing the bare essentials of Web development on July 11, 2016. This page is intended for my ongoing training in Web development. As you can see from this, I am going to be honest and admit that I know very little of Web page formatting. This page looks terrible, but we all have to start somewhere. Thank you for your visit and feel free to check the "Phase 0" section. 
+      </p>
+      <br />
+      <p class="sub">An amateur's analysis of the <a href="http://www.businessinsider.com/">Business Insider</a> web page:
+      </p>
+    </div>
+
+    <div>
+
+      <ul class="sub">
+        <li>Aesthetically Simple</li>
+        <li>Collapsible Site Menu</li>
+        <li>Scrollable Site Nav</li>
+        <li>Search Feature</li>
+        <li>Multi-language</li>
+        <li class="negative">Too many articles loaded at once</li>
+      </ul>
+    </div>
+
+    <footer>
+      <!-- script provided by Fardjad Davari @ NPM. License included in source -->
+    <div>
+      <span id="typewriter"></span>
+      ||
+    </div>
+
+    <script type="text/javascript" src="./js/typewriter-bundle.js"></script>
+    <script type="text/javascript">
+        quotes = [
+          "There is no I in Team.",
+          "YOLO, so make it count.",
+          "Mistakes are proof you are trying.",
+          "No one is perfect. Keep at it.",
+          "Aim High. Fly. Fight. Win!"
+        ]
+      var typewriter = require('typewriter');
+      var twSpan = document.getElementById('typewriter');
+      var tw = typewriter(twSpan).withAccuracy(95)
+                                 .withMinimumSpeed(5)
+                                 .withMaximumSpeed(18)
+                                 .build();
+      tw.waitRange(300, 800)
+        .type(quotes[Math.floor(Math.random() * quotes.length)])
+    </script>
+    </footer>
+  </body>
+</html>

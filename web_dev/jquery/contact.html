@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact Info</title>
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <style>
+      body {background-color: #A9A9A9;}
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center">Contact Info</h1>
+
+    <nav style="center">
+      <a href="./index.html">Main</a> |
+      <a href="./phase0/index.html">Phase 0</a> |
+      <a href ="./about.html">About Me</a>
+    </nav>
+
+    <div>
+      <br />
+      <table>
+        <caption id="secret-contact">Hover over e-mail and phone to reveal</caption>
+        <tr>
+          <th>Name</th>
+          <th>E-Mail</th>
+          <th>Phone No.</th>
+        </tr>
+        <tr>
+          <td>Nestor A.</td>
+          <td class="hidden">grimreaper1169@gmail.com</td>
+          <td class="hidden">(562)-896-8298</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      <!-- script provided by Fardjad Davari @ NPM. License included in source -->
+    <div>
+      <span id="typewriter"></span>
+      ||
+    </div>
+
+    <script type="text/javascript" src="./js/typewriter-bundle.js"></script>
+    <script type="text/javascript">
+        quotes = [
+          "Go Big! Home is boring.",
+          "Life is 10% of what happens to us, the rest is how we react to it.",
+          "Push yourself because no one else will.",
+          "Victory belongs to the most persevering.",
+          "Aim High. Fly. Fight. Win!"
+        ]
+      var typewriter = require('typewriter');
+      var twSpan = document.getElementById('typewriter');
+      var tw = typewriter(twSpan).withAccuracy(95)
+                                 .withMinimumSpeed(5)
+                                 .withMaximumSpeed(18)
+                                 .build();
+      tw.waitRange(300, 800)
+        .type(quotes[Math.floor(Math.random() * quotes.length)])
+    </script>
+    </footer>
+  </body>
+</html>
