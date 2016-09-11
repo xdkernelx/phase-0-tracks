@@ -1,0 +1,5 @@
+1. Sinatra is not the only web app library. The other most common one is Ruby on Rails. 
+
+2. Another possible database system manageable under Sinatra is PostgreSQL
+
+3. As defined by techtarget.com, a Web stack is the collection of software required for Web development. At a minimum, a Web stack contains an operating system (OS), a programming language, database software and a Web server. LAMP is one commonly used Web stack.
