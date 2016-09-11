@@ -13,3 +13,10 @@ their code tick.
 
 For this exercise, I will looking at two people: paulliu87 and parkynj (GitHub usernames)
 
+Some of the key differences between the two people is that paulliu87 uses scripts inside his HTML, while
+parkynj uses it in a separate file. 
+
+The syntax is pretty clear. paulliu87 uses JQuery from the JQuery website, while parkyngj uses a Google
+version of it. They both seem to be the latest versions. Still, comparing both of these users, there is 
+redundancy that is apparent. One uses .on("click", ACTION) while the other uses .click(ACTION)
+
