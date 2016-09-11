@@ -1,0 +1,227 @@
+commit e46d2a47a40e92cfc775b280f979ab13742b74dd
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added analysis of Business Insider site with a list.
+
+commit 00f07056448dc1b0b4a685079230ae514286a864
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Updated changelog. Site still crap.
+
+commit 0b4ecb78e1422fe331372551210ab6ea11474179
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Removed background color, added under_construction.png, gave photo credit.
+
+commit cc3d7e2943d0b09484278f34b475769159a1b22b
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added img/under_construction.png
+
+commit 63ed0c73c86907004b59ebff075adb435bb99b13
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added styling for typewriter JS through footer tag.
+
+commit f7523e9e6738dea6b520057515fd99d0a759650d
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Updated CHANGELOG. Taking a break.
+
+commit 28acf2a506a6c2c9e8cf7a72a979d7be3c37b77d
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Fixed broken JS link reference. Modified quote cache.
+
+commit 0fcf830784fefb007914b464327b667d895266d1
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Changed the title.
+
+commit a6380311c7f0d226d2ce8557006583aee7ffec05
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Modified quote cache on contact.html
+
+commit 258452d0e7d368cf7eeb8c29ffeecd7baaeb6dce
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added background color, site nav, and typewriter JS.
+
+commit 98f23576517ce08cb5b0092e2e2c2a5c208af4d5
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Modified quotes cache.
+
+commit ecfd4ee1129df8699d1985e918f04d7b19fa265a
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added table for contact info. Styled with hover event to reveal. Removed unused class, condensed it to triple type class.
+
+commit 325662780207b94cd2a2649cfcac3b6bb6b3d228
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added header, site nav, and motivational typewriter JS.
+
+commit 70aad592cd1d33fcb053d28559e2eda64c154992
+Merge: 101cb11 92bdedd
+Author: xdkernelx <grimreaper1169@gmail.com>
+Commit: GitHub <noreply@github.com>
+
+    Merge pull request #4 from xdkernelx/about-edit
+    
+    Verification process complete. Merge granted.
+
+commit 92bdedd36e297cb6d9110b58653a9ef06d1596d8
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Shifted background color from HTML to styling class.
+
+commit 1d42b91f4c943c278a5a9364fa530258b046913c
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Removed blink tag. Deprecated in for Web standards.
+
+commit 7d052c92384d4d22aee733112b1010f5a3a8cfa7
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Removed blink tag. Deprecated tag for Web standards.
+
+commit d8895e642dc23cf508f0c2aa948ddf0d29a69303
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added thumb_self picture with center alignment.
+
+commit 1ea8556f0812749b75f51f2ccec309695032b694
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added img/thumb_self.jpg
+
+commit 154e2746e10027c19fb0f1c96ddf30771cc187f8
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added a nav element, styling classes, and background color.
+
+commit 101cb11560ea96a4ef828a9be5df27c457f7d7b5
+Merge: e74db86 6152994
+Author: xdkernelx <grimreaper1169@gmail.com>
+Commit: GitHub <noreply@github.com>
+
+    Merge pull request #3 from xdkernelx/main-index-modify
+    
+    Verification process complete. Merge granted.
+
+commit 6152994ec6ca82350abc9c83d98872bba7480f84
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added a page description inside the body. Added some styling classes. Changed background color.
+
+commit 96c533a0aedfd4a22a372c38138329118568ccf4
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added HTML boilerplate to about.html
+
+commit 43a9b534ce6c6516e567038200c58a66d9fc1772
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Created about.html
+
+commit 971f9baa89679e3f43575a7b027e5d5f9722b168
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added a nav element for site direction.
+
+commit c44d45a3adcfe5c3e6f77df6038fafde1ea3a74f
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Removed unused div section inside body.
+
+commit b59252ef80c02adf140c44f62ed1bddd0803f25d
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added a typewriter effect for a cached quote collection.
+
+commit f35dfae073d8a62deeeb5ed422961ff1838aab2f
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added LICENSE file and typewriter-bundle JS file
+
+commit e74db8662cc00e2a06c2eb466b7ab8624c6915b1
+Merge: 329cf61 312e4b9
+Author: xdkernelx <grimreaper1169@gmail.com>
+Commit: GitHub <noreply@github.com>
+
+    Merge pull request #2 from xdkernelx/main-index-modify
+    
+    Verification process complete. Merge granted.
+
+commit 312e4b9ec2a60a50aa56ab6c48039c2e427e8c35
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added title and header with style.
+
+commit 329cf6134c5cc671c597a8a88c8e0c650c799113
+Merge: 6db0654 52dc640
+Author: xdkernelx <grimreaper1169@gmail.com>
+Commit: GitHub <noreply@github.com>
+
+    Merge pull request #1 from xdkernelx/create-files
+    
+    Verification process complete. Merge granted.
+
+commit 52dc6407466bb52207b3b0e20448ace416083cc7
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added HTML boilerplate to 3 files: index, contact, phase0/index
+
+commit 1e3638e58dff818e736ef93987a37642ab7337ea
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Created 3 files: index, contact, phase0/index
+
+commit 6d83ff63190cbea28392d32eee5cdadd2e04a633
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Added CHANGELOG.txt
+
+commit 2d3aa19f0bc5e84d0f7d66da708dbaf6265d6c7c
+Author: Nestor J. Alvarez <grimreaper1169@gmail.com>
+Commit: Nestor J. Alvarez <grimreaper1169@gmail.com>
+
+    Revised README: Added brief site description and site map.
+
+commit 6db0654fe5293db58908df63bd7d15f098cf8171
+Author: xdkernelx <grimreaper1169@gmail.com>
+Commit: xdkernelx <grimreaper1169@gmail.com>
+
+    Initial commit

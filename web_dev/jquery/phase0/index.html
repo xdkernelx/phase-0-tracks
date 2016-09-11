@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Phase 0</title>
+    <link rel="stylesheet" href="../styles/style.css" type="text/css">
+  </head>
+  <body>
+    <h1 class="center">The dev Bootcamp Experience</h1>
+
+    <nav style="center">
+      <a href="../index.html">Main</a> |
+      <a href="../about.html">About Me</a> |
+      <a href ="../contact.html">Contact</a>
+    </nav>
+    <div class="responsive">
+      <br /><img src="../img/under_construction.png" alt="Under Construction" width="300" /><br />
+      <p class="center">
+        Photo Provided by: <a href="https://pixabay.com/en/under-construction-construction-area-150271/">OpenClipart-Vectors.</a><br />
+
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/">License</a>
+      </p>
+    </div>
+
+    <footer>
+      <!-- script provided by Fardjad Davari @ NPM. License included in source -->
+    <div>
+      <span id="typewriter"></span>
+      ||
+    </div>
+
+    <script type="text/javascript" src="../js/typewriter-bundle.js"></script>
+    <script type="text/javascript">
+        quotes = [
+          "Limit exists only in the mind.",
+          "LIFE = RISK",
+          "Yesterday you said tomorrow.",
+          "Remember the guy who gave up? Yep, no one else does either.",
+          "Aim High. Fly. Fight. Win!"
+        ]
+      var typewriter = require('typewriter');
+      var twSpan = document.getElementById('typewriter');
+      var tw = typewriter(twSpan).withAccuracy(95)
+                                 .withMinimumSpeed(5)
+                                 .withMaximumSpeed(18)
+                                 .build();
+      tw.waitRange(300, 800)
+        .type(quotes[Math.floor(Math.random() * quotes.length)])
+    </script>
+    </footer>
+
+  </body>
+</html>
