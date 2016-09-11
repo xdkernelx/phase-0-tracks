@@ -21,3 +21,10 @@ The 4xx class of status code is intended for situations in which the client seem
 ###5XXX Server Error
 The server failed to fulfill an apparently valid request.[56] (Wikipedia)
 
+##Difference between GET and POST
+Source: http://stackoverflow.com/questions/3477333/what-is-the-difference-between-post-and-get
+
+"So essentially GET is used to retrieve remote data, and POST is used to insert/update remote data."
+
+##Definition of a Browser Cookie
+A small text file (up to 4KB) created by a Web site that is stored in the user's computer either temporarily for that session only or permanently on the hard disk (persistent cookie). Cookies provide a way for the Web site to recognize you and keep track of your preferences. (PCMag)
