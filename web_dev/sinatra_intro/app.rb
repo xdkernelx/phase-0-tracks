@@ -56,3 +56,7 @@ get '/great_job' do
     "Good job!"
   end
 end
+
+get '/adder/:num1/plus/:num2' do
+  "#{params[:num1].to_i} + #{params[:num2].to_i} = #{params[:num1].to_i + params[:num2].to_i}"
+end
